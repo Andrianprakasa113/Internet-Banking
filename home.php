@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
+    ?>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="validasi_login.php" method="POST" class="bungkus">
+    <form action="" method="POST" class="bungkus">
 
         <!-- bagian buat header -->
         <div class="kepala">
@@ -19,22 +23,31 @@
         <!-- bagian buat navigasi -->
         <div class="navigasi">
             <div class="isi_navigasi">
-            <h1>admin</h1>
-            <ul>
-                <li><a href="home.php" class="link_navigasi">home</a></li>
-                <li><a href="home.php?link=register" class="link_navigasi">register</a></li>
-                <li><a href="home.php?link=daftar_akun" class="link_navigasi">daftar</a></li>
-                <li><a href="home.php?link=tambah_data" class="link_navigasi">tambah_data</a></li>
-                <li><a href="home.php?link=perbarui_akun" class="link_navigasi">perbarui akun</a></li>
-            </ul>
-
-            <h1>customer</h1>
-            <ul>
-                <li><a href="home.php" class="link_navigasi">home</a></li>
-                <li><a href="home.php?link=lihat_transaksi" class="link_navigasi">lihat transaksi</a></li>
-                <li><a href="home.php?link=melakukan_transaksi" class="link_navigasi">transaksi</a></li>
-                <li><a href="home.php?link=edit_profile" class="link_navigasi">edit profile</a></li>
-            </ul>
+            <?php
+            if (isset($_SESSION['admin'])) {
+                ?>
+                     <h1><?php echo $_SESSION['nama_admin'];?></h1>
+                        <ul>
+                            <li><a href="home.php" class="link_navigasi">home</a></li>
+                            <li><a href="home.php?link=register" class="link_navigasi">register</a></li>
+                            <li><a href="home.php?link=daftar_akun" class="link_navigasi">daftar</a></li>
+                            <li><a href="home.php?link=tambah_data" class="link_navigasi">tambah_data</a></li>
+                            <li><a href="home.php?link=perbarui_akun" class="link_navigasi">perbarui akun</a></li>
+                        </ul>
+                <?php
+            }
+            else if (isset($_SESSION['nsb'])) {
+                ?>
+                 <h1>customer</h1>
+                    <ul>
+                        <li><a href="home.php" class="link_navigasi">home</a></li>
+                        <li><a href="home.php?link=lihat_transaksi" class="link_navigasi">lihat transaksi</a></li>
+                        <li><a href="home.php?link=melakukan_transaksi" class="link_navigasi">transaksi</a></li>
+                        <li><a href="home.php?link=edit_profile" class="link_navigasi">edit profile</a></li>
+                    </ul>
+            <?php
+            }
+            ?>
             </div>
                 
         </div>
@@ -42,26 +55,27 @@
         <div class="isi">
             ini isi
         <?php
-            if (@$_GET[link] == 'register') {
+            var_dump($_SESSION);
+            if (@$_GET[link] == 'register' && isset($_SESSION['admin'])) {
                 include 'navigasi/register.php';
             }
-            else if(@$_GET[link] == 'daftar_akun'){
+            else if(@$_GET[link] == 'daftar_akun' && isset($_SESSION['admin'])){
                 include 'navigasi/daftar_akun.php';
             }
-            else if(@$_GET[link] == 'perbarui_akun'){
+            else if(@$_GET[link] == 'perbarui_akun' && isset($_SESSION['admin'])){
                 include 'navigasi/perbarui_akun.php';
             }
-            else if(@$_GET[link] == 'tambah_data'){
+            else if(@$_GET[link] == 'tambah_data' && isset($_SESSION['admin'])){
                 include 'navigasi/tambah_data.php';
             }
-            else if(@$_GET[link] == 'lihat_transaksi'){
+            else if(@$_GET[link] == 'lihat_transaksi' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
-            else if(@$_GET[link] == 'melakukan_transaksi'){
+            else if(@$_GET[link] == 'melakukan_transaksi' && isset($_SESSION['nsb'])){
                 include 'navigasi/melakukan_transaksi.php';
             }
 
-            else if(@$_GET[link] == 'edit_profile'){
+            else if(@$_GET[link] == 'edit_profile' && isset($_SESSION['nsb'])){
                 include 'navigasi/edit_profile.php';
             }
             ?> 
@@ -74,3 +88,6 @@
    
 </body>
 </html>
+<?php
+}
+?>
