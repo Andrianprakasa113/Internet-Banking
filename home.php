@@ -55,7 +55,6 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         <div class="isi">
             ini isi
         <?php
-            var_dump($_SESSION);
             if (@$_GET[link] == 'register' && isset($_SESSION['admin'])) {
                 include 'navigasi/register.php';
             }
