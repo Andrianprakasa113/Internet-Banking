@@ -38,7 +38,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
             else if (isset($_SESSION['nsb'])) {
                 ?>
-                 <h1>customer</h1>
+                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
                     <ul>
                         <li><a href="home.php" class="link_navigasi">home</a></li>
                         <li><a href="home.php?link=lihat_transaksi" class="link_navigasi">lihat transaksi</a></li>
@@ -89,5 +89,8 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
 </body>
 </html>
 <?php
+}
+else{
+    header('Location:index.html');
 }
 ?>

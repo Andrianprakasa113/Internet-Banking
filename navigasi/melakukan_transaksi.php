@@ -1,3 +1,3 @@
 <div class="transaksi">
-    <h1>melakukan transaksi 1</h1>
+    <h1>melakukan transaksi</h1>
 </div>
