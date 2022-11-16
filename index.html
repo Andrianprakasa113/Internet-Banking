@@ -12,21 +12,27 @@
 </head>
 <body>
     <div class="container">
+
+        <!-- Bagian buat header -->
         <div class="header">
             <div class="judul">
-                <h1>NAMA BANK</h1>
+                <h1 class="kepala">BASER</h1>
             </div>
             <div class="nav">
-                <ul>
-                    <li><a class="link" href="#">about</a></li>
+                <ul><li><a class="link" href="#">home</a></li>
+                    <li><a class="link" href="#about">about</a></li>
+                    <li><a class="link " href="#contact">contact us</a></li>
                 </ul>
             </div>
         </div>
+        <div class="baru">ok</div>
         <div class="container-content">
             <br>
             <br>
             
             <br>
+
+            <!-- buat isi halaman bagian untuk home  -->
             <div class="content">
                 <h2>judul pembahasan</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, labore voluptas cumque voluptate commodi quod ducimus vitae doloremque, distinctio tempore exercitationem, impedit qui fuga eaque dolorum fugit est eligendi! Aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magni inventore modi aperiam accusamus vero illo. Perferendis minus fuga tempore neque animi aut! Voluptatum, sit libero architecto vero rerum quibusdam.</p>
@@ -35,19 +41,62 @@
                 <h2>login</h2>
                 <form action="" method="post">
                     <div>
-                        <label for="username">username: </label>
-                        <input type="text" id="username" name="username">
+                        <label for="username" class="label">username </label>
+                        <br>
+                        <input type="text" id="username" class="text_label" name="username">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="password" class="label">password </label>
+                        <br>
+                        <input type="password" id="password" class="text_label" name="password">
                     </div>
                     <div>
-                        <label for="password">password: </label>
-                        <input type="password" id="password" name="password">
-                    </div>
-                    <div>
-                        <input type="submit" name="submit" value="login">
+                        <input type="submit" name="submit" class="submit" value="login">
                     </div>
                 </form>
             </div>
         </div>
+
+        <!-- buat isi halaman bagian untuk about us  -->
+        <div class="about" id="about">
+            <div class="bungkus_biodata">
+                <div class="tempat_biodata">
+                    <div class="gambar">
+                        <img src="gambar/rosi.jpg" alt="icon" class="gambar_biodata">
+                    </div>
+                    <div class="isi_biodata">
+                        <p class="isi">Isi biodata</p> 
+                    </div>
+                </div>
+    
+                <div class="tempat_biodata">
+                    <div class="gambar">
+                        <!-- Untuk gamabr bisa ambil gambar pribadi dengan ukuran 1:1 -->
+                        <img src="img_258083.png" alt="icon" class="gambar_biodata">
+                    </div>
+                    <div class="isi_biodata">
+                        <p class="isi">Isi biodata</p> 
+                    </div>
+                </div>
+    
+                <div class="tempat_biodata">
+                    <div class="gambar">
+                        <!-- Untuk gamabr bisa ambil gambar pribadi dengan ukuran 1:1 -->
+                        <img src="img_258083.png" alt="icon" class="gambar_biodata">
+                    </div>
+                    <div class="isi_biodata">
+                        <p class="isi">Isi biodata</p> 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- buat isi halaman bagian untuk contact us perlu diedit lagi -->
+        <div class="contact_us" id="contact">
+
+        </div>
+
         <div class="footer">
             <p>cpoyright by @teamBanking</p>
         </div>

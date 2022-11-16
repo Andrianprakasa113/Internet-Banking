@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.bungkus{
+    display: grid;
+    grid-template-areas: "navigasi kepala"
+                            "navigasi isi"
+                            "navigasi kaki";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.4fr 4fr 1fr;
+}
+.kepala{
+    grid-area: kepala;
+    background: maroon;
+
+}
+.navigasi{
+    width: 100%;
+    height: 100%;
+    background: salmon fixed;
+    grid-area: navigasi;
+}
+.isi_navigasi{
+    position: fixed;
+    
+}
+li{
+    list-style: none;
+    padding: 10% 0;
+}
+
+.link_navigasi{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+.isi{
+    grid-area: isi;
+    height: 100vh;
+}
+/* ini bagian style yang filenya dipanggil dari sini sampai line 164 */
+.daftar_akun{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+@keyframes animasi {
+    from{
+        left: 40%;
+        opacity: 0;
+    }
+    to{
+        left: 50%;
+        opacity: 1;
+    }
+}
+.edit_profile{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.lihat_transaksi{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.transaksi{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.update{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.register{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.tambah_data{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.daftar_akun{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.kaki{
+    grid-area: kaki;
+    background: rosybrown;
+}
