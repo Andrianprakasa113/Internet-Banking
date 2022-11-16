@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="" method="POST" class="bungkus">
+    <form action="validasi_login.php" method="POST" class="bungkus">
 
         <!-- bagian buat header -->
         <div class="kepala">
