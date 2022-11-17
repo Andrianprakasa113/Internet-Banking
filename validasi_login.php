@@ -4,8 +4,8 @@ session_start();
 
 if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
     $kalimat_query = $kon -> prepare('SELECT * FROM admin where USERNAME_ADMIN= :data_admin AND SANDI_ADMIN = :sandi_admin');
-    $kalimat_query -> bindValue(':data_admin','Rosi');
-    $kalimat_query -> bindValue(':sandi_admin','06032003');
+    $kalimat_query -> bindValue(':data_admin',$_POST['username']);
+    $kalimat_query -> bindValue(':sandi_admin',$_POST['password']);
     $kalimat_query -> execute();
 
     $cek = $kalimat_query -> rowCount();
@@ -22,8 +22,8 @@ if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
     }
     else{
         $kalimat_query = $kon -> prepare('SELECT * FROM nasabah where USERNAME_NSB= :data_user AND PASSWORD_NSB = :sandi_user');
-        $kalimat_query -> bindValue(':data_user','Isnan1');
-        $kalimat_query -> bindValue(':sandi_user','123456781');
+        $kalimat_query -> bindValue(':data_user',$_POST['username']);
+        $kalimat_query -> bindValue(':sandi_user',$_POST['password']);
         $kalimat_query -> execute();
         $cek_nsb = $kalimat_query -> rowCount();
         $cetak = $kalimat_query -> fetch();
@@ -33,6 +33,9 @@ if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
             $_SESSION['nama_nsb'] = $cetak["NAMA_NSB"];
             var_dump($_SESSION);
             header('Location:home.php');
+        }
+        else{
+            header('Location:index.html');
         }
         }
     }
