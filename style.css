@@ -18,7 +18,7 @@ body{
     width: 95%;
     border-radius: 0 0 100px 100px ;
     text-align: center;
-    background: aqua;
+    background: #f7b611;
     position: fixed;
     top: -22px;
     z-index: 5;
@@ -41,6 +41,11 @@ body{
     text-decoration: none;
     font-size: 15pt;
     color: black;
+}
+.link:hover{
+    border-bottom: 2px solid black;
+    border-radius: 5%;
+    animation: forwards;
 }
 
 .container-content{
@@ -179,7 +184,7 @@ body{
 }
 .footer {
     position: relative;
-    background: #0092CA;
+    background: #f7b611;
     text-align: center;
     /* margin: 27% 0 0 0; */
     clear: both;
