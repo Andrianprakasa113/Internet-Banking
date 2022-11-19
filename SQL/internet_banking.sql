@@ -44,6 +44,7 @@ CREATE TABLE `rekening` (
   `WAKTU_BUAT_REK` date DEFAULT NULL,
   `SALDO_REK` float(8,2) DEFAULT NULL,
   PRIMARY KEY (`USERNAME_NSB`,`NO_REK`),
+  KEY `NO_REK` (`NO_REK`),
   CONSTRAINT `FK_MEMILIKI` FOREIGN KEY (`USERNAME_NSB`) REFERENCES `nasabah` (`USERNAME_NSB`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -52,14 +53,14 @@ DROP TABLE IF EXISTS `transaksi`;
 CREATE TABLE `transaksi` (
   `WAKTU_TRANSAKSI` datetime NOT NULL,
   `JUM_TRANSFER` float(8,2) DEFAULT NULL,
-  `no_rek_pengirim` varchar(35) NOT NULL,
-  `no_rek_penerima` varchar(35) NOT NULL,
+  `no_rek_pengirim` decimal(12,0) NOT NULL,
+  `no_rek_penerima` decimal(12,0) NOT NULL,
   PRIMARY KEY (`WAKTU_TRANSAKSI`),
   KEY `no_rek_pengirim` (`no_rek_pengirim`),
   KEY `no_rek_penerima` (`no_rek_penerima`),
-  CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`no_rek_pengirim`) REFERENCES `nasabah` (`USERNAME_NSB`),
-  CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`no_rek_penerima`) REFERENCES `nasabah` (`USERNAME_NSB`)
+  CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`no_rek_pengirim`) REFERENCES `rekening` (`NO_REK`),
+  CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`no_rek_penerima`) REFERENCES `rekening` (`NO_REK`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2022-11-19 14:13:53
+-- 2022-11-19 18:13:42
