@@ -6,17 +6,24 @@
 
     foreach($home_admin as $data){
     ?>
-    <div class="transaksi">
-        <table border=1px>
+    <div class="hom">
+        <img class="adminprofil" src="./gambar/rosi.jpg">
+        <table >
             <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>No Hp</th>
+                <th class="isitabel1">Nama</th>
+                <td class="isitabel1">:</td>
+                <td class="isitabel1"><?php echo "{$data['NAMA_ADMIN']}" ?></td>
+                
             </tr>
             <tr>
-                <th><?php echo "{$data['NAMA_ADMIN']}" ?></th>
-                <th><?php echo "{$data['EMAIL_ADMIN']}"; ?></th>
-                <th><?php echo "{$data['NO_HP_ADMIN']} "; ?></th>
+                <th class="isitabel1">Email</th>
+                <td class="isitabel1">:</td>
+                <td class="isitabel1"><?php echo "{$data['EMAIL_ADMIN']}"; ?></td>
+            </tr>
+            <tr>
+                <th class="isitabel1">No Hp</th>
+                <td class="isitabel1">:</td>
+                <td class="isitabel1"><?php echo "{$data['NO_HP_ADMIN']} "; ?></td>
             </tr>
         </table>
     </div>

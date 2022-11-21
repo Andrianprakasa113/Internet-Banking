@@ -17,7 +17,8 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
 
         <!-- bagian buat header -->
         <div class="kepala">
-            ini kepala
+            <h1><?php echo $_SESSION['nama_admin'];?></h1>
+            <a href="home.php"><img class="headimg" src="./gambar/rosi.jpg"></a>
         </div>
 
         <!-- bagian buat navigasi -->
@@ -26,12 +27,12 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             <?php
             if (isset($_SESSION['admin'])) {
                 ?>
-                     <h1><?php echo $_SESSION['nama_admin'];?></h1>
+                     <h1>Navigation</h1>
                         <ul>
                             <li><a href="home.php" class="link_navigasi">home</a></li>
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
-                            <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">daftar</a></li>
-                            <li><a href="home.php?link=tambah_data" class="link_navigasi" name="perbarui_akun">tambah_data</a></li>
+                            <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">Daftar Nasabah</a></li>
+                            <!-- <li><a href="home.php?link=tambah_data" class="link_navigasi" name="perbarui_akun">T</a></li> -->
                             <li><a href="home.php?link=perbarui_akun" class="link_navigasi" name="tambah_data">perbarui akun</a></li>
                             <li><a href="logout.php" class="link_navigasi" name="logout">Logout</a></li>
                         </ul>
@@ -86,6 +87,10 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
             ?> 
         </div>
+<<<<<<< HEAD
+=======
+        <!-- Bagian buat footer -->
+>>>>>>> 5c6ffc6bf556155fb6355b1c2007075ce0acbbc1
     </form>
    
 </body>
