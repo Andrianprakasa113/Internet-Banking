@@ -25,7 +25,7 @@
                 </ul>
             </div>
         </div>
-        <div class="baru">ok</div>
+        <div class="baru"></div>
         <div class="container-content">
             <br>
             <br>
