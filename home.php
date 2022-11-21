@@ -55,9 +55,11 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         </div>
         <!-- Bagian buat isi dari konten -->
         <div class="isi">
-            ini isi
         <?php
-            if (@$_GET['link'] == 'register' && isset($_SESSION['admin'])) {
+            if (@$_GET['link'] == '' && isset($_SESSION['admin'])){
+                include 'navigasi/homeAplikasi.php';
+            }
+            else if (@$_GET['link'] == 'register' && isset($_SESSION['admin'])) {
                 include 'navigasi/register.php';
             }
             else if(@$_GET['link'] == 'daftar_akun' && isset($_SESSION['admin'])){

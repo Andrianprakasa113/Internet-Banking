@@ -120,6 +120,20 @@ li{
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
 }
+.home{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
 .register{
     position: relative;
     display: flex;
