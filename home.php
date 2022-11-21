@@ -16,11 +16,25 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
     <form action="" method="POST" class="bungkus">
 
         <!-- bagian buat header -->
-        <div class="kepala">
-            <h1><?php echo $_SESSION['nama_admin'];?></h1>
-            <a href="home.php"><img class="headimg" src="./gambar/rosi.jpg"></a>
-        </div>
-
+        <?php
+        if (isset($_SESSION['admin'])) {
+           ?>
+           <div class="kepala">
+                <h1><?php echo $_SESSION['nama_admin'];?></h1>
+                <a href="home.php"><img class="headimg" src="./gambar/rosi.jpg"></a>
+            </div>
+           <?php
+        }
+        else if (isset($_SESSION['nsb'])){
+            ?>
+            <div class="kepala">
+                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
+                 <a href="home.php"><img class="headimg" src="./gambar/rosi.jpg"></a>
+             </div>
+            <?php
+        }
+        ?>
+        S
         <!-- bagian buat navigasi -->
         <div class="navigasi">
             <div class="isi_navigasi">

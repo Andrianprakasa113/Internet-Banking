@@ -12,8 +12,8 @@ var_dump($cek);
     <h1>lihat transaksi</h1>
     <?php
     foreach ($kalimat_query as $data) {
-        ?>
-        <a href="home.php?link_no_rek=<?php echo $data['NO_REK'];?>"><?php echo $data['NO_REK'];?></a>
+        ?><br>
+        <a href="home.php?link_no_rek=<?php echo $data['NO_REK'];?>"> <?php echo $data['NO_REK'];?> </a>
     <?php
     }
     ?>
