@@ -72,6 +72,9 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                 include 'navigasi/tambah_data.php';
             }
             else if(@$_GET['link'] == 'lihat_transaksi' && isset($_SESSION['nsb'])){
+                include 'navigasi/daftar_transaksi.php';
+            }
+            else if($_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
             else if(@$_GET['link'] == 'melakukan_transaksi' && isset($_SESSION['nsb'])){
@@ -82,10 +85,6 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                 include 'navigasi/edit_profile.php';
             }
             ?> 
-        </div>
-        <!-- Bagian buat footer -->
-        <div class="kaki">
-            Ini kaki
         </div>
     </form>
    
