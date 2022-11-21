@@ -54,7 +54,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
             else if (isset($_SESSION['nsb'])) {
                 ?>
-                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
+                 <h1>Navigation</h1>
                     <ul>
                         <li><a href="home.php" class="link_navigasi">home</a></li>
                         <li><a href="home.php?link=lihat_transaksi" class="link_navigasi" name="lihat_transaksi">lihat transaksi</a></li>
@@ -89,7 +89,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             else if(@$_GET['link'] == 'lihat_transaksi' && isset($_SESSION['nsb'])){
                 include 'navigasi/daftar_transaksi.php';
             }
-            else if($_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
+            else if(@$_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
             else if(@$_GET['link'] == 'melakukan_transaksi' && isset($_SESSION['nsb'])){
