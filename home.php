@@ -41,7 +41,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             <?php
             if (isset($_SESSION['admin'])) {
                 ?>
-                     <h1><?php echo $_SESSION['nama_admin'];?></h1>
+                     <h1>Navigation</h1>
                         <ul>
                             <li><a href="home.php" class="link_navigasi">home</a></li>
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
