@@ -8,11 +8,15 @@
                             "navigasi isi"
                             "navigasi kaki";
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 0.4fr 4fr 1fr;
+    grid-template-rows: 0.5fr 4fr 1fr;
 }
 .kepala{
     grid-area: kepala;
     background: maroon;
+    font-size: 12pt;
+    display: flex;
+    align-items: center;
+    padding: 1% 2%;
 
 }
 .navigasi{
@@ -23,7 +27,14 @@
 }
 .isi_navigasi{
     position: fixed;
+    margin-bottom: 10%;
     
+}
+.isi_navigasi h1{
+    margin: 10% 0 0 19%;
+    font-style: italic;
+    border-bottom: 3px solid white;
+    width: 90%;
 }
 li{
     list-style: none;
@@ -34,6 +45,8 @@ li{
     text-decoration: none;
     color: black;
     width: 100%;
+    font-size: 125%;
+    font-weight: 600;
 }
 .isi{
     grid-area: isi;
@@ -120,19 +133,30 @@ li{
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
 }
-.home{
+.hom{
+    font-size: 25px;
     position: relative;
     display: flex;
     border-radius: 8px;
-    justify-content: center;
+    justify-content: right;
+    padding: 2%;
     align-items: center;
-    top: 2%;
-    left: 50%;
+    top: 4%;
+    left:50%;
     transform: translate(-50%,0);
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
+}
+.isitabel1{
+    padding-bottom: 15px;
+    border: 0px solid black;
+}
+.adminprofil{
+    width: 25%;
+    margin-right: 12.5%;
+    border-radius: 100%;
 }
 .register{
     position: relative;
@@ -179,4 +203,10 @@ li{
 .kaki{
     grid-area: kaki;
     background: rosybrown;
+}
+
+.headimg{
+    width: 5%;
+    float: right;
+    border-radius: 100%;
 }
