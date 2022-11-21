@@ -42,7 +42,7 @@ CREATE TABLE `rekening` (
   `USERNAME_NSB` varchar(35) NOT NULL,
   `NO_REK` decimal(12,0) NOT NULL,
   `WAKTU_BUAT_REK` date DEFAULT NULL,
-  `SALDO_REK` float(8,2) DEFAULT NULL,
+  `SALDO_REK` float(15,2) DEFAULT NULL,
   PRIMARY KEY (`USERNAME_NSB`,`NO_REK`),
   KEY `NO_REK` (`NO_REK`),
   CONSTRAINT `FK_MEMILIKI` FOREIGN KEY (`USERNAME_NSB`) REFERENCES `nasabah` (`USERNAME_NSB`)
@@ -52,7 +52,7 @@ CREATE TABLE `rekening` (
 DROP TABLE IF EXISTS `transaksi`;
 CREATE TABLE `transaksi` (
   `WAKTU_TRANSAKSI` datetime NOT NULL,
-  `JUM_TRANSFER` float(8,2) DEFAULT NULL,
+  `JUM_TRANSFER` float(15,2) DEFAULT NULL,
   `no_rek_pengirim` decimal(12,0) NOT NULL,
   `no_rek_penerima` decimal(12,0) NOT NULL,
   PRIMARY KEY (`WAKTU_TRANSAKSI`),
