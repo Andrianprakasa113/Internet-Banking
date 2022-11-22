@@ -35,7 +35,7 @@ if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
             header('Location:home.php');
         }
         else{
-            header('Location:index.html');
+            header('Location:index.php');
         }
         }
     }
