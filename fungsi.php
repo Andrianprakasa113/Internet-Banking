@@ -62,7 +62,7 @@ function cek_numerik_rek($data){
 }
 
 //fungsi buat numerik no_tlp
-function cek_numerik_rek($data){
+function cek_numerik_tlp($data){
 	$cek = "/^[0-9'-]+$/";
 	$batas = 12;
 	if (empty($data) || $data == " ") {
