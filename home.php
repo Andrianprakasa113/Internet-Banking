@@ -18,19 +18,19 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         <!-- bagian buat header -->
         <?php
         if (isset($_SESSION['admin'])) {
-           ?>
-           <div class="kepala">
+        ?>
+            <div class="kepala">
                 <h1><?php echo $_SESSION['nama_admin'];?></h1>
                 <a href="home.php"><img class="headimg" src="./gambar/rosi.jpg"></a>
             </div>
-           <?php
+        <?php
         }
         else if (isset($_SESSION['nsb'])){
             ?>
             <div class="kepala">
-                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
-                 <a href="home.php"><img class="headimg" src="img_258083.png"></a>
-             </div>
+                <h1><?php echo $_SESSION['nama_nsb'];?></h1>
+                <a href="home.php"><img class="headimg" src="img_258083.png"></a>
+            </div>
             <?php
         }
         ?>
@@ -41,7 +41,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             <?php
             if (isset($_SESSION['admin'])) {
                 ?>
-                     <h1>Navigation</h1>
+                    <h1>Navigation</h1>
                         <ul>
                             <li><a href="home.php" class="link_navigasi">home</a></li>
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
@@ -54,7 +54,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
             else if (isset($_SESSION['nsb'])) {
                 ?>
-                 <h1>Navigation</h1>
+                <h1>Navigation</h1>
                     <ul>
                         <li><a href="home.php" class="link_navigasi">home</a></li>
                         <li><a href="home.php?link=lihat_transaksi" class="link_navigasi" name="lihat_transaksi">lihat transaksi</a></li>
@@ -102,7 +102,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             ?> 
         </div>  
     </form>
-   
+
 </body>
 </html>
 <?php
