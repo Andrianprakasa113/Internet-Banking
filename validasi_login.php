@@ -2,6 +2,7 @@
 include 'koneksi.php';
 session_start();
 
+//cek dulu bagian adminnya
 if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
     $kalimat_query = $kon -> prepare('SELECT * FROM admin where USERNAME_ADMIN= :data_admin AND SANDI_ADMIN = :sandi_admin');
     $kalimat_query -> bindValue(':data_admin',$_POST['username']);
@@ -20,6 +21,7 @@ if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
         var_dump($_SESSION);
         header('Location:home.php');
     }
+    //jika nggak ada di admin cek di nasabah
     else{
         $kalimat_query = $kon -> prepare('SELECT * FROM nasabah where USERNAME_NSB= :data_user AND PASSWORD_NSB = :sandi_user');
         $kalimat_query -> bindValue(':data_user',$_POST['username']);
@@ -39,6 +41,7 @@ if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
         }
         }
     }
+//kalau nggak ada semua ditolak
 else{
     header('Location:home.php');
 }

@@ -34,10 +34,37 @@ function alamat_email($data){
 	return $data;
 }
 
+//fungsi buat cek numerik transfer
+function cek_numerik($data){
+	$cek = "/^[0-9'-]+$/";
+	$batas1 = 5;
+	$batas2 = 9;
+	if (empty($data) || $data == " ") {
+		$data = "*Harap diisi!";
+	}
+	else if(!preg_match($cek, $data)){
+		$data = "*Hanya bisa diisi dengan angka";
+	}
+	else if (strpos($data, " ")) {
+		$data = "*Tidak boleh ada spasi";
+	}
+	else if (strlen($data) < 5) {
+		$hasil = $batas - strlen($data);
+		$data = "*Jumlah inputan kurang - $hasil digit harap isi dengan benar";
+	}
+	else if (strlen($data) > 9) {
+		$hasil = strlen($data) - $batas;
+		$data = "*Jumlah inputan lebih - $hasil digit harap isi dengan benar";
+	}
+	else{
+		$data = True;
+	}
+	return $data;
+}
 //fungsi buat cek numerik rekening
 function cek_numerik_rek($data){
 	$cek = "/^[0-9'-]+$/";
-	$batas = 12;
+	$batas = 16;
 	if (empty($data) || $data == " ") {
 		$data = "*Harap diisi!";
 	}
@@ -51,7 +78,7 @@ function cek_numerik_rek($data){
 		$hasil = $batas - strlen($data);
 		$data = "*Jumlah inputan kurang - $hasil harap isi dengan benar";
 	}
-	else if (strlen($data) > 12) {
+	else if (strlen($data) > 16) {
 		$hasil = strlen($data) - $batas;
 		$data = "*Jumlah inputan lebih - $hasil harap isi dengan benar";
 	}
