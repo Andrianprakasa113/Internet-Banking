@@ -1,20 +1,19 @@
-
-<form action="#" method='POST'>
-<div class="transaksi">
-    <h1>melakukan transaksi</h1>
-    <label for="nominal">Masukkan nominal transfer :</label>
-    <input type="text" id='nominal' name="jumlah_tf">
-    <input type="submit" value="Kirim" name="tombol">
-</div>
-</form>
 <?php
 include './koneksi.php';
 include './fungsi.php';
 
 
-if (isset($_POST['tombol'])) {
-    $nominal_tf = $_POST['jumlah_tf'];
-    echo $nominal_tf;
-}
-
 ?>
+<form action="#" method='POST'>
+<div class="transaksi">
+    <h1>melakukan transaksi</h1>
+    <label for="rekening_asal">Masukkan no rekening :</label>
+    <datalist id="rekening_asal"></datalist>
+    <label for="nominal">Masukkan rekening tujuan :</label>
+    <input type="text" id='nominal' name="jumlah_tf">
+    <label for="nominal">Masukkan nominal transfer :</label>
+    <input type="text" id='nominal' name="jumlah_tf">
+    <input type="submit" value="Kirim" name="tombol">
+</div>
+</form>
+
