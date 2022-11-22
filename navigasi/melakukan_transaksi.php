@@ -30,30 +30,47 @@ $total_transfer     = cek_numerik(@$_POST['jumlah_tf']);
     <input type="text" id='rekening_penerima' name="rekening_penerima" value="<?php if(isset($_POST['tombol'])){ echo htmlspecialchars($_POST['rekening_penerima']);}?>">
 
     <label for="nominal">Masukkan nominal transfer :</label>
-    <input type="text" id='nominal' name="jumlah_tf">
+    <input type="text" id='nominal' name="jumlah_tf" value="<?php if(isset($_POST['tombol'])){ echo htmlspecialchars($_POST['jumlah_tf']);}?>">
     <input type="submit" value="Kirim" name="tombol">
 <?php
 //eksekusi pogramnya
 if (isset($_POST['tombol']) && $rekening_asal === true && $rekening_penerima === true && $total_transfer === true) {
-    // cek dulu rekeningnya 
-    $kalimat_query = $kon -> prepare("SELECT NO_REK FROM rekening where NO_REK = :no_rek and USERNAME_NSB = :nama_user");
+
+    // cek dulu rekeningnya sekaligus saldonya
+    $kalimat_query = $kon -> prepare("SELECT NO_REK, SALDO_REK FROM rekening where NO_REK = :no_rek and USERNAME_NSB = :nama_user");
     $kalimat_query -> bindValue(':nama_user',$_SESSION['nsb']);
     $kalimat_query -> bindValue(':no_rek',$_POST['rekening_asal']);
     $kalimat_query -> execute();
     $cek_pengirim = $kalimat_query -> rowCount();
+    $cek_saldo = $kalimat_query -> fetch();
+
     if ($cek_pengirim > 0) {
         //sekarang cek data rekening pengirim dan rekening penerima
         //kalau sama jangan dizinkan
         if ($_POST['rekening_asal'] != $_POST['rekening_penerima']) {
+
             $kalimat_query = $kon -> prepare("SELECT NO_REK FROM rekening where NO_REK = :no_rek");
             $kalimat_query -> bindValue(':no_rek',$_POST['rekening_penerima']);
             $kalimat_query -> execute();
             $cek_penerima = $kalimat_query -> rowCount();
+
             //lalu cek apakah ada data no rekening penerimanya
+
             if ($cek_penerima > 0) {
-                //sekarang cek saldo transfernya
-                
-                header('loaction:pogram_transaksi.php');
+                //sekarang cek saldo minimal transfernya
+                if ($_POST['jumlah_tf'] >= 50000) {
+                    var_dump($cek_saldo);
+                    //jika saldonya memenuhi maka izinkan
+                    if ($cek_saldo > $_POST['jumlah_tf']) {
+                        
+                    }
+                    header('loaction:pogram_transaksi.php');
+                }
+                else {
+                    ?>
+                <p>*saldo transfer minimal Rp 50.000</p>
+                <?php
+              }
             }
             else {
                 ?>

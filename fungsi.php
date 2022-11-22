@@ -49,11 +49,11 @@ function cek_numerik($data){
 		$data = "*Tidak boleh ada spasi";
 	}
 	else if (strlen($data) < 5) {
-		$hasil = $batas - strlen($data);
+		$hasil = $batas1 - strlen($data);
 		$data = "*Jumlah inputan kurang - $hasil digit harap isi dengan benar";
 	}
 	else if (strlen($data) > 9) {
-		$hasil = strlen($data) - $batas;
+		$hasil = strlen($data) - $batas2;
 		$data = "*Jumlah inputan lebih - $hasil digit harap isi dengan benar";
 	}
 	else{
