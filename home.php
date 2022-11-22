@@ -29,7 +29,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             ?>
             <div class="kepala">
                  <h1><?php echo $_SESSION['nama_nsb'];?></h1>
-                 <a href="home.php"><img class="headimg" src="./gambar/rosi.jpg"></a>
+                 <a href="home.php"><img class="headimg" src="img_258083.png"></a>
              </div>
             <?php
         }
