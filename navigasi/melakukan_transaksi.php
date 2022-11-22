@@ -8,7 +8,7 @@ include './fungsi.php';
 <div class="transaksi">
     <h1>melakukan transaksi</h1>
     <label for="rekening_asal">Masukkan no rekening :</label>
-    <datalist id="rekening_asal"></datalist>
+    <datalist id="rekening_asal" name='rekening_asal'></datalist>
     <label for="nominal">Masukkan rekening tujuan :</label>
     <input type="text" id='nominal' name="jumlah_tf">
     <label for="nominal">Masukkan nominal transfer :</label>

@@ -29,7 +29,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             ?>
             <div class="kepala">
                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
-                <a href="home.php"><img class="headimg" src="./gamabar/img_258083.png"></a>
+                <a href="home.php"><img class="headimg" src="./gambar/img_258083.png"></a>
             </div>
             <?php
         }
@@ -108,6 +108,6 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
 <?php
 }
 else{
-    header('Location:index.html');
+    header('Location:index.php');
 }
 ?>
