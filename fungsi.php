@@ -1,5 +1,6 @@
 <?php 
-function nama_user($data){
+//fungsi buat cek alfabet
+function cek_alfabet($data){
 	$cek = "/^[a-zA-Z '-]+$/";
 	if (empty($data) || $data == " ") {
 		$data = "*Harap diisi!";
@@ -13,20 +14,7 @@ function nama_user($data){
 	return $data;
 }
 
-function nama_depan($data){
-	$cek = "/^[a-zA-Z '-]+$/";
-	if (empty($data) || $data == " ") {
-		$data = "*Harap diisi!";
-	}
-	else if(!preg_match($cek, $data)){
-		$data = "*Hanya bisa diisi dengan huruf";
-	}
-	else{
-		$data = True;
-	}
-	return $data;
-}
-
+//harap uabah masih belum selesai dan masih kurang
 function alamat_email($data){
 	if (empty($data) || $data == " ") {
 		$data = "*Harap diisi!";
@@ -46,7 +34,8 @@ function alamat_email($data){
 	return $data;
 }
 
-function no_tlp($data){
+//fungsi buat cek numerik rekening
+function cek_numerik_rek($data){
 	$cek = "/^[0-9'-]+$/";
 	$batas = 12;
 	if (empty($data) || $data == " ") {
@@ -58,7 +47,7 @@ function no_tlp($data){
 	else if (strpos($data, " ")) {
 		$data = "*Tidak boleh ada spasi";
 	}
-	else if (strlen($data) < 11) {
+	else if (strlen($data) < 16) {
 		$hasil = $batas - strlen($data);
 		$data = "*Jumlah inputan kurang - $hasil harap isi dengan benar";
 	}
@@ -72,6 +61,34 @@ function no_tlp($data){
 	return $data;
 }
 
+//fungsi buat numerik no_tlp
+function cek_numerik_rek($data){
+	$cek = "/^[0-9'-]+$/";
+	$batas = 12;
+	if (empty($data) || $data == " ") {
+		$data = "*Harap diisi!";
+	}
+	else if(!preg_match($cek, $data)){
+		$data = "*Hanya bisa diisi dengan angka";
+	}
+	else if (strpos($data, " ")) {
+		$data = "*Tidak boleh ada spasi";
+	}
+	else if (strlen($data) < 12) {
+		$hasil = $batas - strlen($data);
+		$data = "*Jumlah inputan kurang - $hasil harap isi dengan benar";
+	}
+	else if (strlen($data) > 12) {
+		$hasil = strlen($data) - $batas;
+		$data = "*Jumlah inputan lebih - $hasil harap isi dengan benar";
+	}
+	else{
+		$data = True;
+	}
+	return $data;
+}
+
+//fungsi buat password
 function password($data){
 	$cek = "/^[a-zA-Z '-]+$/";
 	$cek2 =  "/^[0-9 '-]+$/";
@@ -97,6 +114,7 @@ function password($data){
 	return $data;
 }
 
+//fungsi buat konfirmasi password
 function  konfirmasi_password($data,$cek){
 	if (empty($data) || $data == " ") {
 		$data = "*Harap diisi!";
@@ -109,14 +127,4 @@ function  konfirmasi_password($data,$cek){
 	}
 	return $data;
 }
-function agama($data){
-	if ($data == "0") {
-		$data = "*Harap diisi!";
-	}
-	else{
-		$data = True;
-	}
-	return $data;
-}
-
  ?>
