@@ -94,6 +94,11 @@ if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && 
                         echo "ok";
                         // header('location:pogram_transaksi.php');
                     }
+                    else {
+                        ?>
+                        <label class="warning_salah">*saldo tidak mencukupi</label>
+                        <?php
+                    }
                 }
                 else {
                     ?>

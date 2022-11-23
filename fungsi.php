@@ -154,4 +154,22 @@ function  konfirmasi_password($data,$cek){
 	}
 	return $data;
 }
+//fungsi buat ngecek saldo rekening
+function cek_saldo($parameter_pertama)
+{
+	$kalimat_query = $kon -> prepare('SELECT SALDO_REK from rekening where N0_REK = :no_rek');
+	$kalimat_query -> bindValue(':no_rek',  $parameter_pertama);
+	$kalimat_query -> execute(); 
+
+	return $kalimat_query -> fetch();
+}
+//fungsi buat update data saldo rekening
+function update_saldo($parameter_pertama, $parameter_kedua)
+{
+	$kalimat_query = $kon -> prepare('UPDATE rekening SET SALDO_REK = :update_saldo where N0_REK = :no_rek');
+	$kalimat_query -> bindValue(':no_rek', $parameter_pertama);
+	$kalimat_query -> bindValue(':update_saldo', $parameter_kedua);
+	$kalimat_query -> execute();
+	return 0;
+}
  ?>
