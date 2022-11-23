@@ -40,7 +40,7 @@
         foreach($home_usr as $data){
         ?>
         <div class="hom">
-            <img class="adminprofil" src="./gambar/img_258083.png" alt>
+            <img class="adminprofil" src="./gambar/icon.png" alt>
             <table >
                 <tr>
                     <th class="isitabel1">Nama</th>

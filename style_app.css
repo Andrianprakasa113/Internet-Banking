@@ -1,6 +1,7 @@
 *{
     margin: 0;
     font-family: 'Montserrat Alternates', sans-serif;
+    overflow-y: hidden;
 }
 .bungkus{
     /* position: fixed; */
@@ -8,22 +9,24 @@
     grid-template-areas: "navigasi kepala"
                             "navigasi isi";
     grid-template-columns: 0.7fr 4fr;
-    grid-template-rows: 0.5fr 88.8vh ;
+    grid-template-rows: 1fr 9fr ;
+    background: rgb(26, 26, 26);
+    
 }
 .kepala{
     grid-area: kepala;
-    background: maroon;
-    font-size: 12pt;
+    background: rgb(0, 0, 0);
     display: flex;
-    align-items: center;
+    font-size: 12pt;
     box-shadow: 0 0 10px black;
     padding: 1% 2%;
-
+    color: #daa520;
+    overflow-x: hidden;
 }
 .navigasi{
     width: 100%;
     height: 100%;
-    background: salmon fixed;
+    background: #f7b611 fixed;
     grid-area: navigasi;
 }
 .isi_navigasi{
@@ -245,12 +248,17 @@ li{
 }
 
 
-
+.link_gambar{
+    position: relative;
+    left: 100%;
+    transform: translate(-15%,0);
+    float: right;   
+}
 
 .headimg{
+    position: inherit;
     width: 5%;
-    float: right;
-    /* margin-right: 5%; */
+    margin-right: -5%;
     border-radius: 100%;
 }
 /* buat desain pesan kesalahan */

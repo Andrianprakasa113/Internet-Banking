@@ -21,7 +21,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         ?>
             <div class="kepala">
                 <h1><?php echo $_SESSION['nama_admin'];?></h1>
-                <a href="home.php"><img class="headimg" src="./gambar/<?php echo $_SESSION['admin'];?>.jpg" alt></a>
+                <a href="home.php" class="link_gambar"><img class="headimg" src="./gambar/<?php echo $_SESSION['admin'];?>.jpg" alt></a>
             </div>
         <?php
         }
@@ -29,7 +29,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             ?>
             <div class="kepala">
                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
-                <a href="home.php"><img class="headimg" src="./gambar/img_258083.png" alt></a>
+                <div class="link_gambar"><a href="home.php"><img class="headimg" src="./gambar/icon.png" alt></a></div>
             </div>
             <?php
         }
@@ -44,8 +44,8 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                         <ul>
                             <li><a href="home.php" class="link_navigasi">home</a></li>
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
-                            <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">daftar</a></li>
-                            <li><a href="home.php?link=tambah_data" class="link_navigasi" name="perbarui_akun">tambah_data</a></li>
+                            <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">daftar akun</a></li>
+                            <li><a href="home.php?link=tambah_data" class="link_navigasi" name="perbarui_akun">tambah rekening</a></li>
                             <li><a href="home.php?link=perbarui_akun" class="link_navigasi" name="tambah_data">perbarui akun</a></li>
                             <li><a href="logout.php" class="link_navigasi" name="logout">Logout</a></li>
                         </ul>
