@@ -3,12 +3,12 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 .bungkus{
+    /* position: fixed; */
     display: grid;
     grid-template-areas: "navigasi kepala"
-                            "navigasi isi"
-                            "navigasi kaki";
+                            "navigasi isi";
     grid-template-columns: 0.7fr 4fr;
-    grid-template-rows: 0.5fr 4fr 1fr;
+    grid-template-rows: 0.5fr 88.8vh ;
 }
 .kepala{
     grid-area: kepala;
@@ -51,7 +51,7 @@ li{
 }
 .isi{
     grid-area: isi;
-    height: 100vh;
+    /* height: 100vh; */
 }
 /* ini bagian style yang filenya dipanggil dari sini sampai line 164 */
 .daftar_akun{
@@ -124,7 +124,7 @@ li{
     position: relative;
     display: flex;
     border-radius: 8px;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     top: 2%;
     left: 50%;
@@ -138,25 +138,28 @@ li{
     font-size: 25px;
     position: relative;
     display: flex;
+    
     border-radius: 8px;
-    justify-content: right;
+    /* justify-content: right; */
     padding: 2%;
     align-items: center;
     top: 4%;
     left:50%;
     transform: translate(-50%,0);
-    width: 60%;
+    width: 65%;
     height: 60%;
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
 }
 .isitabel1{
+    text-align: justify;
     padding-bottom: 15px;
     border: 0px solid black;
 }
 .adminprofil{
     width: 25%;
     margin-right: 12.5%;
+    margin-left: 5%;
     border-radius: 100%;
 }
 .register{
@@ -208,14 +211,12 @@ li{
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
 }
-.kaki{
-    grid-area: kaki;
-    background: rosybrown;
-}
+
 
 .headimg{
     width: 5%;
     float: right;
+    margin-right: -5%;
     border-radius: 100%;
 }
 /* buat desain pesan kesalahan */

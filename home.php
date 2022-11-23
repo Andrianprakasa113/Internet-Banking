@@ -34,14 +34,13 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             <?php
         }
         ?>
-        S
         <!-- bagian buat navigasi -->
         <div class="navigasi">
             <div class="isi_navigasi">
             <?php
             if (isset($_SESSION['admin'])) {
                 ?>
-                    <h1>Navigation</h1>
+                    <h1>BANSER</h1>
                         <ul>
                             <li><a href="home.php" class="link_navigasi">home</a></li>
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
@@ -54,7 +53,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
             else if (isset($_SESSION['nsb'])) {
                 ?>
-                <h1>Navigation</h1>
+                <h1>BANSER</h1>
                     <ul>
                         <li><a href="home.php" class="link_navigasi">home</a></li>
                         <li><a href="home.php?link=lihat_transaksi" class="link_navigasi" name="lihat_transaksi">lihat transaksi</a></li>
@@ -71,7 +70,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         <!-- Bagian buat isi dari konten -->
         <div class="isi">
         <?php
-            if (@$_GET['link'] == '' && isset($_SESSION['admin'])){
+            if (@$_GET['link'] == '' && (isset($_SESSION['admin']) || isset($_SESSION['nsb']))){
                 include 'navigasi/homeAplikasi.php';
             }
             else if (@$_GET['link'] == 'register' && isset($_SESSION['admin'])) {
