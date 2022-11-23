@@ -3,7 +3,7 @@ include 'koneksi.php';
 session_start();
 
 //cek dulu bagian adminnya
-if (!isset($_SESSION['admin']) || !isset($_SESSION['nsb'])) {
+if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
     $kalimat_query = $kon -> prepare('SELECT * FROM admin where USERNAME_ADMIN= :data_admin AND SANDI_ADMIN = :sandi_admin');
     $kalimat_query -> bindValue(':data_admin',$_POST['username']);
     $kalimat_query -> bindValue(':sandi_admin',$_POST['password']);

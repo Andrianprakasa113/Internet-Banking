@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
+    
+    ?>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +21,7 @@
         <!-- Bagian buat header -->
         <div class="header">
             <div class="judul">
-                <h1 class="kepala">BASER</h1>
+                <h1 class="kepala">BANSER</h1>
             </div>
             <div class="nav">
                 <ul><li><a class="link" href="#">home</a></li>
@@ -102,3 +107,10 @@
     </div>
 </body>
 </html>
+    <?php
+    var_dump($_SESSION);
+}
+else {
+    header('location:home.php');
+}
+?>
