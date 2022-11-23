@@ -14,7 +14,6 @@ $rekening_penerima  = cek_numerik_rek(@$_POST['rekening_penerima']);
 $total_transfer     = cek_numerik(@$_POST['jumlah_tf']);
 $tombol             = @$_POST['tombol'];
 ?>
-<form action="#" method='POST'>
 <div class="transaksi">
     <label for="rekening_asal">Masukkan no rekening :</label>
     <input list="rekening_asal1"  id="rekening_asal" name='rekening_asal' value="<?php if(isset($_POST['tombol'])){ echo htmlspecialchars($_POST['rekening_asal']);}?>">
@@ -64,7 +63,7 @@ $tombol             = @$_POST['tombol'];
     ?>
     <input type="submit" value="Kirim" name="tombol">
 <?php
-//eksekusi pogramnya
+//eksekusi cek pogramnya
 if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && $total_transfer === true) {
 
     // cek dulu rekeningnya sekaligus saldonya
@@ -91,7 +90,7 @@ if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && 
                 //sekarang cek saldo minimal transfernya
                 if ($_POST['jumlah_tf'] >= 50000) {
                     //jika saldonya memenuhi maka izinkan
-                    if ($cek_saldo['SALDO_REK'] > $_POST['jumlah_tf']) {
+                    if ((int) $cek_saldo['SALDO_REK'] > $_POST['jumlah_tf']) {
                         echo "ok";
                         // header('location:pogram_transaksi.php');
                     }
@@ -122,4 +121,3 @@ if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && 
 }
 ?>
 </div>
-</form>

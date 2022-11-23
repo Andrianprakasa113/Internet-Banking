@@ -13,7 +13,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="" method="POST" class="bungkus">
+    <form action="#" method="POST" class="bungkus">
 
         <!-- bagian buat header -->
         <?php
@@ -21,7 +21,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         ?>
             <div class="kepala">
                 <h1><?php echo $_SESSION['nama_admin'];?></h1>
-                <a href="home.php"><img class="headimg" src="./gambar/<?php echo $_SESSION['admin'];?>.jpg"></a>
+                <a href="home.php"><img class="headimg" src="./gambar/<?php echo $_SESSION['admin'];?>.jpg" alt></a>
             </div>
         <?php
         }
@@ -29,7 +29,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             ?>
             <div class="kepala">
                 <h1><?php echo $_SESSION['nama_nsb'];?></h1>
-                <a href="home.php"><img class="headimg" src="./gambar/img_258083.png"></a>
+                <a href="home.php"><img class="headimg" src="./gambar/img_258083.png" alt></a>
             </div>
             <?php
         }
