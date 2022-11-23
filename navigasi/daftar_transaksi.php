@@ -9,12 +9,16 @@ var_dump($cek);
 
 ?>
 <div class="lihat_transaksi">
-    <h1>lihat transaksi</h1>
+    <div class="isi_list_lihat_transaksi">
+    <h1>Daftar rekening :</h1>
     <?php
     foreach ($kalimat_query as $data) {
-        ?><br>
-        <a href="home.php?link_no_rek=<?php echo $data['NO_REK'];?>"> <?php echo $data['NO_REK'];?> </a>
+        ?>
+        <p><a href="home.php?link_no_rek=<?php echo $data['NO_REK'];?>"> <?php echo $data['NO_REK'];?> </a></p>
+        
     <?php
     }
     ?>
+    </div>
+    
 </div>

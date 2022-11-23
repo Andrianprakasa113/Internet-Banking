@@ -1,4 +1,5 @@
 <?php 
+
 //fungsi buat cek alfabet
 function cek_alfabet($data){
 	$cek = "/^[a-zA-Z '-]+$/";
@@ -157,16 +158,20 @@ function  konfirmasi_password($data,$cek){
 //fungsi buat ngecek saldo rekening
 function cek_saldo($parameter_pertama)
 {
-	$kalimat_query = $kon -> prepare('SELECT SALDO_REK from rekening where N0_REK = :no_rek');
+	include 'koneksi.php';
+
+	$kalimat_query = $kon -> prepare('SELECT SALDO_REK from rekening where NO_REK = :no_rek');
 	$kalimat_query -> bindValue(':no_rek',  $parameter_pertama);
 	$kalimat_query -> execute(); 
-
-	return $kalimat_query -> fetch();
+	$data = $kalimat_query -> fetch();
+	var_dump($data);
+	return $data;
 }
 //fungsi buat update data saldo rekening
 function update_saldo($parameter_pertama, $parameter_kedua)
 {
-	$kalimat_query = $kon -> prepare('UPDATE rekening SET SALDO_REK = :update_saldo where N0_REK = :no_rek');
+	include 'koneksi.php';
+	$kalimat_query = $kon -> prepare('UPDATE rekening SET SALDO_REK = :update_saldo where NO_REK = :no_rek');
 	$kalimat_query -> bindValue(':no_rek', $parameter_pertama);
 	$kalimat_query -> bindValue(':update_saldo', $parameter_kedua);
 	$kalimat_query -> execute();

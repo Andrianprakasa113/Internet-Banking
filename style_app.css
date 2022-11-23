@@ -94,7 +94,7 @@ li{
 }
 .lihat_transaksi{
     position: relative;
-    display: flex;
+    /* display: flex; */
     border-radius: 8px;
     justify-content: center;
     align-items: center;
@@ -105,6 +105,24 @@ li{
     height: 80%;
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
+}
+.isi_list_lihat_transaksi{
+    text-align: center;
+    position: relative;
+    width: 50%;
+    top : 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    line-height: 25pt;
+}
+.daftar_lihat_transaksi{
+    text-align: center;
+    position: relative;
+    width: 90%;
+    top : 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    line-height: 25pt;
 }
 .transaksi{
     position: relative;
