@@ -2,6 +2,8 @@
 include './koneksi.php';
 include './fungsi.php';
 
+//cek dulu 
+
 //ambil dulu data saldonya
 $kalimat_query = $kon -> prepare('SELECT SALDO_REK from rekening where N0_REK = :no_rek');
 

@@ -218,3 +218,9 @@ li{
     float: right;
     border-radius: 100%;
 }
+/* buat desain pesan kesalahan */
+.warning_salah{
+    color: red;
+    font-size: 10pt;
+    font-style: italic;
+}
