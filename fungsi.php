@@ -17,17 +17,11 @@ function cek_alfabet($data){
 
 //harap uabah masih belum selesai dan masih kurang
 function alamat_email($data){
-	if (empty($data) || $data == " ") {
-		$data = "*Harap diisi!";
-	}
-	else if(!preg_match("/@/i", $data) && !preg_match("/./i", $data)){
-		$data = "*Harap sertakan karakter @ dan . !";
-	}
-	else if(!preg_match("/@/i", $data)){
-		$data = "*Harap sertakan karakter @ !";
-	}
-	else if(!strpos($data, ".")){
-		$data = "*Harap sertakan karakter . !";
+	$pattern2 = "/^([a-zA-Z0-9 \. _]+)@([a-zA-Z]+)\.([a-zA-Z]{1,})(.[a-zA-Z]{1,})?(.[a-zA-Z]{1,})?$/";
+	if (!isset($email) || empty($email)){
+		$data = '*harap diisi';
+	}else if (!preg_match($pattern2, $email)){
+		$data = "*email tidak valid";
 	}
 	else{
 		$data = True;

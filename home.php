@@ -96,7 +96,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
 
             else if(@$_GET['link'] == 'edit_profile' && isset($_SESSION['nsb'])){
-                include 'navigasi/edit_profile.php';
+                include 'navigasi/homeAplikasi.php';
             }
             ?> 
         </div>  

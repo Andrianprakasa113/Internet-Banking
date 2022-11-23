@@ -1,7 +1,7 @@
 <?php
 include './koneksi.php';
 
-$kalimat_query =  $kon -> prepare('SELECT transaksi.*, rekening.USERNAME_NSB from rekening inner join transaksi on rekening.NO_REK = transaksi.no_rek_pengirim where USERNAME_NSB = :nama_nsb and NO_REK =:no_rek');
+$kalimat_query =  $kon -> prepare('SELECT transaksi.*, rekening.USERNAME_NSB from rekening inner join transaksi on rekening.NO_REK = transaksi.no_rek_pengirim where USERNAME_NSB = :nama_nsb and NO_REK =:no_rek ORDER BY WAKTU_TRANSAKSI DESC');
 $kalimat_query -> bindValue(':nama_nsb',$_SESSION['nsb']);
 $kalimat_query -> bindValue(':no_rek',$_GET['link_no_rek']);
 $kalimat_query -> execute();

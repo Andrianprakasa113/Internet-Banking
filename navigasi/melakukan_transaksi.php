@@ -90,7 +90,7 @@ if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && 
                 //sekarang cek saldo minimal transfernya
                 if ($_POST['jumlah_tf'] >= 50000) {
                     //jika saldonya memenuhi maka izinkan
-                    if ((int) $cek_saldo['SALDO_REK'] > $_POST['jumlah_tf']) {
+                    if ((int) $cek_saldo['SALDO_REK'] >= $_POST['jumlah_tf']) {
                             //ambil dulu data saldo dari si pengirim
                                 $kalimat_query = $kon -> prepare('SELECT SALDO_REK from rekening where NO_REK = :no_rek');
                                 $kalimat_query -> bindValue(':no_rek',  $_POST['rekening_asal']);
