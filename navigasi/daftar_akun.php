@@ -25,7 +25,7 @@
             <td class='isi_tabel'><?php echo "{$data['TGL_NSB']} "; ?></td>
             <td class='isi_tabel'><?php echo "{$data['NO_HP_NSB']} "; ?></td>
             <td class='isi_tabel'><?php echo "{$data['NO_REK']} "; ?></td>
-            <td class="isi_tabel"><a href="home.php?link_edit_profile=<?php echo $data['USERNAME_NSB']?>"> Edit </a></td>
+            <td class="isi_tabel"><a href="home.php?link_edit=<?php echo $data['NO_REK']?>"> Edit </a></td>
             <td class="isi_tabel"><a href="home.php?link_delete_user=<?php echo $data['USERNAME_NSB']?>"> Delete </a></td>
         </tr>
         <?php

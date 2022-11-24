@@ -76,7 +76,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             else if(@$_GET['link_edit_profile'] == 'edit' && isset($_SESSION['nsb'])){
                 include 'navigasi/edit_profile_nsb.php';
             }
-            else if(@$_GET['link_edit_profile'] != ' ' && isset($_SESSION['admin'])){
+            else if(@$_GET['link_edit'] != ' ' && isset($_SESSION['admin'])){
                 include 'navigasi/edit_profile_nsb.php';
             }
             else if (@$_GET['link'] == '' && (isset($_SESSION['admin']) || isset($_SESSION['nsb']))){
