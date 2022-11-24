@@ -18,7 +18,18 @@ include './koneksi.php';
          <tr>
              <th class="isitabel1">Tanggal lahir</th>
              <td class="isitabel1">:</td>
-             <td class="isitabel1"><input type="date" value="<?php echo "{$data['TGL_NSB']}"; ?>" name="tgl"></td>
+             <td class="isitabel1">
+                <?php
+                //buat inputan tanggal
+                $pisahkan = explode("-",$data['TGL_NSB']);
+                ?>
+             <input type="text" value="<?php echo "{$pisahkan[2]}"; ?>" name="tgl"> - 
+             <input type="text" value="<?php echo "{$pisahkan[1]}"; ?>" name="bln"> - 
+             <input type="text" value="<?php echo "{$pisahkan[0]}"; ?>" name="thn">
+            <?php
+            $gabungkan = @$_POST['thn'].'-'.@$_POST['bln'].'-'.@$_POST['tgl'];
+            ?>
+            </td>
          </tr>
          <tr>
              <th class="isitabel1">Alamat</th>
