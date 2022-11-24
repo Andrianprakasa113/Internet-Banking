@@ -69,7 +69,7 @@
                     <td class="isitabel1"><?php echo "{$data['NO_HP_NSB']} "; ?></td>
                 </tr>
                 <tr>
-                    <th class="isitabel1"><a href="home.php?link_edit_profile=<?php echo $data['USERNAME_NSB']?>">Edit profile</a></th>
+                    <th class="isitabel1"><a href="home.php?link_edit_profile=edit">Edit profile</a></th>
                 </tr>
             </table>
         </div>

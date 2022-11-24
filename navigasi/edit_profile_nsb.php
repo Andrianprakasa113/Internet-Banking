@@ -1,7 +1,7 @@
 <?php
 include './koneksi.php';
  $home_usr = $kon -> prepare("select * from nasabah where USERNAME_NSB=:nsb ");
- $home_usr -> bindValue(":nsb", $_GET['link_edit_profile']);
+ $home_usr -> bindValue(":nsb", $_SESSION['nsb']);
  $home_usr -> execute(); 
 
  foreach($home_usr as $data){
