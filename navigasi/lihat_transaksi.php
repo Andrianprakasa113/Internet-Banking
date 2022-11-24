@@ -32,6 +32,7 @@ if ($cek > 0) {
                         <tr class="warna2">
                         <?php
                     }
+                    //tampilkan data transaksi nasabah
                     ?>
                         <td><?php echo $no; $no++;?></td>
                         <td><?php echo "{$data['USERNAME_NSB']}";?></td>

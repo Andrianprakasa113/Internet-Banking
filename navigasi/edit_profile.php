@@ -12,34 +12,42 @@ include './koneksi.php';
          <tr>
              <th class="isitabel1">Nama</th>
              <td class="isitabel1">:</td>
-             <td class="isitabel1"><?php echo "{$data['NAMA_NSB']}" ?></td>
+             <td class="isitabel1"><input type="text" name="nama_user" id="nama_user" value="<?php echo "{$data['NAMA_NSB']}" ?>"></td>
              
          </tr>
          <tr>
              <th class="isitabel1">Tanggal lahir</th>
              <td class="isitabel1">:</td>
-             <td class="isitabel1"><?php echo "{$data['TGL_NSB']}"; ?></td>
+             <td class="isitabel1"><input type="date" value="<?php echo "{$data['TGL_NSB']}"; ?>" name="tgl"></td>
          </tr>
          <tr>
              <th class="isitabel1">Alamat</th>
              <td class="isitabel1">:</td>
-             <td class="isitabel1"><?php echo "{$data['ALAMAT_NSB']}"; ?></td>
+             <td class="isitabel1"><textarea name="alamat_user" id="alamat_user" cols="20" rows="4"><?php echo "{$data['ALAMAT_NSB']}"; ?></textarea></td>
          </tr>
          <tr>
              <th class="isitabel1">Email</th>
              <td class="isitabel1">:</td>
-             <td class="isitabel1"><?php echo "{$data['EMAIL_NSB']}"; ?></td>
+             <td class="isitabel1"><input type="text" name="email_user" id="email_user" value="<?php echo "{$data['EMAIL_NSB']}"; ?>"></td>
          </tr>
          <tr>
              <th class="isitabel1">No Hp</th>
              <td class="isitabel1">:</td>
-             <td class="isitabel1"><?php echo "{$data['NO_HP_NSB']} "; ?></td>
+             <td class="isitabel1"><input type="text" name="no_hp_user" id="no_hp_user" value="<?php echo "{$data['NO_HP_NSB']} "; ?>"></td>
          </tr>
          <tr>
-             <th class="isitabel1"><input type="submit" value="Simpan"></th>
+             <td class="isitabel1"><input type="submit" value="Simpan" name="simpan"></td>
+             <td></td>
+             <td></td>
          </tr>
      </table>
+     <?php
+    //   if (isset($_POST['simpan'])) {
+    //     var_dump($_POST);
+    //  }
+     ?>
  </div>
  <?php
  }
+
 ?>
