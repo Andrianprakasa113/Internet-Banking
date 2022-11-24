@@ -24,8 +24,8 @@
     overflow-x: hidden;
 }
 .link_gambar{
-    position: relative;
-    left: 2%;
+    position: fixed;
+    right: -56%;
     transform: translate(-15%,0);
 }
 

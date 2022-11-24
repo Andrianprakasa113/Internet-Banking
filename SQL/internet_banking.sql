@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2022 at 01:36 AM
+-- Generation Time: Nov 24, 2022 at 04:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -65,7 +65,13 @@ CREATE TABLE `nasabah` (
 --
 
 INSERT INTO `nasabah` (`USERNAME_NSB`, `USERNAME_ADMIN`, `PASSWORD_NSB`, `NAMA_NSB`, `ALAMAT_NSB`, `EMAIL_NSB`, `TGL_NSB`, `NO_HP_NSB`) VALUES
-('fadil12', NULL, '223', 'fadil', 'bangkalan', 'fadil@gg.com', '2022-11-15', '122300');
+('Andra', NULL, '12', 'Andra', 'lolol', 'andra@com', '2022-11-22', '123'),
+('Janice', NULL, '12', 'Janice', 'lolol', 'Janicea@com', '2022-11-22', '123'),
+('Mapa', NULL, 'az', 'Mapa Mahardika', 'asdwa', 'awda@co', '2022-11-22', '123'),
+('Nulce', NULL, '12', 'Nulce', 'lolol', 'Nulcea@com', '2022-11-22', '123'),
+('Sam', NULL, '12', 'Sam', 'lolol', 'Sam@com', '2022-11-22', '123'),
+('Tatak', NULL, '12', 'Tatak', 'lolol', 'Tataka@com', '2022-11-22', '123'),
+('Yosua', NULL, 'az', 'yasudd', 'Yosua', 'yasuda@com', '2022-11-22', '912');
 
 -- --------------------------------------------------------
 
@@ -77,7 +83,7 @@ CREATE TABLE `rekening` (
   `USERNAME_NSB` varchar(35) NOT NULL,
   `NO_REK` decimal(12,0) NOT NULL,
   `WAKTU_BUAT_REK` date DEFAULT NULL,
-  `SALDO_REK` decimal(11,2) DEFAULT NULL
+  `SALDO_REK` float(15,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -85,7 +91,10 @@ CREATE TABLE `rekening` (
 --
 
 INSERT INTO `rekening` (`USERNAME_NSB`, `NO_REK`, `WAKTU_BUAT_REK`, `SALDO_REK`) VALUES
-('fadil12', '203324102491', '2022-11-02', '1000000.00');
+('Andra', '123124', '0000-00-00', 1231231.00),
+('Andra', '212312', '2022-11-03', 123123120.00),
+('Janice', '212312', '2022-11-03', 223123120.00),
+('Tatak', '212112', '2022-11-03', 123123120.00);
 
 -- --------------------------------------------------------
 
@@ -95,7 +104,7 @@ INSERT INTO `rekening` (`USERNAME_NSB`, `NO_REK`, `WAKTU_BUAT_REK`, `SALDO_REK`)
 
 CREATE TABLE `transaksi` (
   `WAKTU_TRANSAKSI` datetime NOT NULL,
-  `JUM_TRANSFER` float(11,2) DEFAULT NULL,
+  `JUM_TRANSFER` float(15,2) DEFAULT NULL,
   `no_rek_pengirim` decimal(12,0) NOT NULL,
   `no_rek_penerima` decimal(12,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -121,8 +130,8 @@ ALTER TABLE `nasabah`
 -- Indexes for table `rekening`
 --
 ALTER TABLE `rekening`
-  ADD PRIMARY KEY (`NO_REK`,`USERNAME_NSB`) USING BTREE,
-  ADD KEY `USERNAME_NSB` (`USERNAME_NSB`);
+  ADD PRIMARY KEY (`USERNAME_NSB`,`NO_REK`),
+  ADD KEY `NO_REK` (`NO_REK`);
 
 --
 -- Indexes for table `transaksi`
