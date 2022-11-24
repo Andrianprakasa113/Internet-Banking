@@ -73,6 +73,9 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             if(@$_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
+            else if(@$_GET['link_edit_profile'] != '' && (isset($_SESSION['admin']) || isset($_SESSION['nsb']))){
+                include 'navigasi/edit_profile.php';
+            }
             else if (@$_GET['link'] == '' && (isset($_SESSION['admin']) || isset($_SESSION['nsb']))){
                 include 'navigasi/homeAplikasi.php';
             }
