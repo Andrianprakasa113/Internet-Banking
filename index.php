@@ -38,8 +38,9 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
 
             <!-- buat isi halaman bagian untuk home  -->
             <div class="content">
-                <h2>judul pembahasan</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, labore voluptas cumque voluptate commodi quod ducimus vitae doloremque, distinctio tempore exercitationem, impedit qui fuga eaque dolorum fugit est eligendi! Aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magni inventore modi aperiam accusamus vero illo. Perferendis minus fuga tempore neque animi aut! Voluptatum, sit libero architecto vero rerum quibusdam.</p>
+                <h2>Bank Sejahtera</h2>
+                <p>BANSER kini hadir dalam bentuk internet banking. Tanpa harus pergi ke Bank nasabah bisa bertransaksi dimanapun dan kapanpun. Banser juga membebaskan nasabah dari biaya admin transfer ke sesama rekening Banser. Pada internet bangking Banser, nasabah bisa mengedit profile halaman nasabah. Tunggu apa lagi ayo segera menabung di Bank Sejahtera</p>
+                
             </div>
             <div class="login">
                 <h2>login</h2>
