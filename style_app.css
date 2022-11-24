@@ -105,10 +105,32 @@ li{
     top: 2%;
     left: 50%;
     transform: translate(-50%,0);
-    width: 80%;
+    width: 90%;
     height: 80%;
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
+}
+.daftar_lihat_transaksi table{
+    width: 100%;
+    border: solid 1px black;
+    border-spacing: 0;
+}
+.daftar_lihat_transaksi th{
+    border: solid 1px rgb(80, 80, 80);
+    background: rgb(27, 27, 27);
+    color: goldenrod;
+    padding:0 0.5%;
+    width: 1%;
+}
+.daftar_lihat_transaksi td{
+    border: solid 1px black;
+    padding:0 0.5%;
+}
+.warna1{
+    background: rgb(204, 204, 204);
+}
+.warna2{
+    background: rgb(255, 207, 85);
 }
 .isi_list_lihat_transaksi{
     text-align: center;

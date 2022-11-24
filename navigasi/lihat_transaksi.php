@@ -6,13 +6,14 @@ $kalimat_query -> bindValue(':nama_nsb',$_SESSION['nsb']);
 $kalimat_query -> bindValue(':no_rek',$_GET['link_no_rek']);
 $kalimat_query -> execute();
 $cek = $kalimat_query -> rowCount();
-
+$no = 1;
 if ($cek > 0) {
     ?>
         <div class="lihat_transaksi">
             <div class="daftar_lihat_transaksi">
             <table>
                 <tr>
+                    <th>No</th>
                     <th>Nama  nasabah</th>
                     <th>Waktu transaksi</th>
                     <th>Jumlah transfer</th>
@@ -21,8 +22,18 @@ if ($cek > 0) {
                 </tr>
                 <?php
                 foreach ($kalimat_query as $data) {
+                    if ($no%2==1) {
+                        ?>
+                    <tr class="warna1">
+                    <?php
+                    }
+                    else {
+                        ?>
+                        <tr class="warna2">
+                        <?php
+                    }
                     ?>
-                    <tr>
+                        <td><?php echo $no; $no++;?></td>
                         <td><?php echo "{$data['USERNAME_NSB']}";?></td>
                         <td><?php echo "{$data['WAKTU_TRANSAKSI']}";?></td> 
                         <td><?php echo "Rp. {$data['JUM_TRANSFER']}";?></td>
