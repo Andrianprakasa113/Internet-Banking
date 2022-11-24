@@ -19,9 +19,21 @@
     display: flex;
     font-size: 12pt;
     box-shadow: 0 0 10px black;
-    padding: 1% 2%;
+    padding: 2% 2%;
     color: #daa520;
     overflow-x: hidden;
+}
+.link_gambar{
+    position: relative;
+    left: 2%;
+    transform: translate(-15%,0);
+}
+
+.headimg{
+    position: inherit;
+    width: 5%;
+    margin-right: -5%;
+    border-radius: 100%;
 }
 .navigasi{
     width: 100%;
@@ -37,7 +49,7 @@
 .isi_navigasi h1{
     margin: 10% 0 10% 19%;
     font-style: italic;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid rgb(58, 54, 54);
     width: 80%;
     font-size: 20pt;
 }
@@ -269,21 +281,6 @@ li{
     /* width: 40%;
     height: 40%; */
 
-}
-
-
-.link_gambar{
-    position: relative;
-    left: 100%;
-    transform: translate(-15%,0);
-    float: right;   
-}
-
-.headimg{
-    position: inherit;
-    width: 5%;
-    margin-right: -5%;
-    border-radius: 100%;
 }
 /* buat desain pesan kesalahan */
 .warning_salah{

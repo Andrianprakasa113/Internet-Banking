@@ -79,7 +79,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             else if (@$_GET['link'] == '' && (isset($_SESSION['admin']) || isset($_SESSION['nsb']))){
                 include 'navigasi/homeAplikasi.php';
             }
-            else if(@$_GET['link_edit'] != ' ' && isset($_SESSION['admin'])){
+            else if(@$_GET['link'] == ' daftar_akun' && isset($_SESSION['admin'])){
                 include 'navigasi/edit_profile_nsb.php';
             }
             else if (@$_GET['link'] == 'register' && isset($_SESSION['admin'])) {
