@@ -108,7 +108,6 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
 </body>
 </html>
     <?php
-    var_dump($_SESSION);
 }
 else {
     header('location:home.php');
