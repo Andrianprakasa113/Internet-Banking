@@ -59,7 +59,7 @@ function cek_numerik($data){
 //fungsi buat cek numerik rekening
 function cek_numerik_rek($data){
 	$cek = "/^[0-9'-]+$/";
-	$batas = 16;
+	$batas = 12;
 	if (empty($data) || $data == " ") {
 		$data = "*Harap diisi!";
 	}
@@ -69,11 +69,11 @@ function cek_numerik_rek($data){
 	else if (strpos($data, " ")) {
 		$data = "*Tidak boleh ada spasi";
 	}
-	else if (strlen($data) < 16) {
+	else if (strlen($data) < 12) {
 		$hasil = $batas - strlen($data);
 		$data = "*Jumlah inputan kurang - $hasil harap isi dengan benar";
 	}
-	else if (strlen($data) > 16) {
+	else if (strlen($data) > 12) {
 		$hasil = strlen($data) - $batas;
 		$data = "*Jumlah inputan lebih - $hasil harap isi dengan benar";
 	}
