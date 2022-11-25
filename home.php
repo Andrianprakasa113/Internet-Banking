@@ -21,7 +21,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         ?>
             <div class="kepala">
                 <h1><?php echo $_SESSION['nama_admin'];?></h1>
-                <a href="home.php" class="link_gambar"><img class="headimg" src="./gambar/<?php echo $_SESSION['admin'];?>.jpg" alt></a>
+                <a href="home.php" class="link_gambar"><img class="headimg" src="./gambar/<?php echo $_SESSION['nama_admin'];?>.jpg" alt="a"></a>
             </div>
         <?php
         }
