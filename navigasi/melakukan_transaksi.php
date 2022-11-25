@@ -117,9 +117,9 @@ if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && 
                                 $kalimat_query -> bindValue(':total_tf',  $_POST['jumlah_tf']);
                                 $kalimat_query -> bindValue(':si_pengirim', $_POST['rekening_asal']);
                                 $kalimat_query -> bindValue(':si_penerima',  $_POST['rekening_penerima']);
-                                $kalimat_query -> execute(); 
+                                $kalimat_query -> execute();
 
-                                header('location:home.php?link=melakukan_transaksi');
+                                // header('location:t_a\git\Internet-Banking\home.php?link_sukses=transaksi_sukses');
                     }
                     else {
                         ?>
@@ -150,6 +150,10 @@ if (isset($tombol) && $rekening_asal === true && $rekening_penerima === true && 
         <label class="warning_salah">*data no rekening pengirim tidak ada</label>
         <?php
     }
+}
+else {
+    ?>
+    <?php
 }
 ?>
 </div>

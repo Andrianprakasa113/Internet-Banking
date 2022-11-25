@@ -68,12 +68,15 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
         </div>
         <!-- Bagian buat isi dari konten -->
         <div class="isi">
-        <?php
+            <?php
             if(@$_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
             else if(@$_GET['link_edit_profile'] == 'edit' && isset($_SESSION['nsb'])){
                 include 'navigasi/edit_profile_nsb.php';
+            }
+            else if(@$_GET['link_sukses'] == 'transaksi_sukses' && isset($_SESSION['nsb'])){
+                include 'navigasi/transaksi_berhasil.php';
             }
             else if (@$_GET['link'] == '' && (isset($_SESSION['admin']) || isset($_SESSION['nsb']))){
                 include 'navigasi/homeAplikasi.php';
@@ -99,7 +102,6 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             else if(@$_GET['link'] == 'melakukan_transaksi' && isset($_SESSION['nsb'])){
                 include 'navigasi/melakukan_transaksi.php';
             }
-
             else if(@$_GET['link'] == 'edit_profile' && isset($_SESSION['nsb'])){
                 include 'navigasi/homeAplikasi.php';
             }
