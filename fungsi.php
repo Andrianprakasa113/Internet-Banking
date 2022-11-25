@@ -14,13 +14,25 @@ function cek_alfabet($data){
 	}
 	return $data;
 }
-
+function alfa_num($parameter_pertama){
+	$cek = "/^([a-zA-Z0-9 \. _]+)([a-zA-Z]+)\.([a-zA-Z]{1,})(.[a-zA-Z]{1,})?(.[a-zA-Z]{1,})?$/";
+	if (!isset($parameter_pertama) || empty($parameter_pertama)) {
+		$data = '*harap diisi';
+	}
+	elseif (!preg_match($cek, $parameter_pertama)) {
+		$data = "*harap diisi dengan benar";
+	}
+	else{
+		$data = true;
+	}
+	return $data;
+}
 //harap uabah masih belum selesai dan masih kurang
 function alamat_email($data){
 	$pattern2 = "/^([a-zA-Z0-9 \. _]+)@([a-zA-Z]+)\.([a-zA-Z]{1,})(.[a-zA-Z]{1,})?(.[a-zA-Z]{1,})?$/";
-	if (!isset($email) || empty($email)){
+	if (!isset($data) || empty($data)){
 		$data = '*harap diisi';
-	}else if (!preg_match($pattern2, $email)){
+	}else if (!preg_match($pattern2, $data)){
 		$data = "*email tidak valid";
 	}
 	else{

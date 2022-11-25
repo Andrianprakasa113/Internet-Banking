@@ -43,7 +43,7 @@
     grid-area: navigasi;
 }
 .isi_navigasi{
-    position: fixed;
+    /* position: fixed; */
     margin-bottom: 10%;
     
 }
@@ -219,6 +219,7 @@ li{
     padding: 2%;
     top: 4%;
     left:50%;
+    margin-bottom: 4%;
     transform: translate(-50%,0);
     width: 70%;
     padding: 4% 2%;
@@ -231,15 +232,18 @@ li{
     top: 5%;
     width: 60%;
     margin-top: -30%;
-    background: white;
 }
 .isitabel1{
     text-align: justify;
     border: 0px solid black;
 }
 .adminprofil{
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
     width: 25%;
-    margin-right: 12.5%;
+    margin-right: 5.5%;
     margin-left: 5%;
     border-radius: 100%;
     float: right;
@@ -315,12 +319,13 @@ li{
 }
 .inputan{
     border: none;
-    width: 30%;
+    width: 40%;
     height: auto;
     background: rgba(20, 20, 20, 0.753);
     border-radius: 25px;
     padding: 1% 3%;
     color: whitesmoke;
+    transition: 0.8s;
 }
 .tgl, .bln, .thn, .alamat{
     text-align: center;
@@ -329,7 +334,7 @@ li{
     color: whitesmoke;
     padding: 1% 3%;
     border-radius: 25px;
-    
+    transition: 0.8s;
 }
 .tgl{
     width: 10%;
@@ -344,4 +349,23 @@ li{
     text-align: justify;
     border-radius: 5px;
     text-indent: 13px;
+}
+.simpan{
+    border: none;
+    background: goldenrod;
+    padding: 1.5% 3%;
+    border-radius: 4px;
+    transition: 0.8s;
+}
+.inputan, .tgl, .bln, .thn, .alamat, .simpan{
+    margin: 3% 4%;
+}
+.inputan:hover, .tgl:hover, .bln:hover, .thn:hover, .alamat:hover{
+    background: goldenrod;
+    color: black;
+}
+.simpan:hover{
+    background: black;
+    color: goldenrod;
+    border-radius: 25px;
 }
