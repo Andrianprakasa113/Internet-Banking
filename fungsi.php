@@ -171,4 +171,90 @@ function update_saldo($parameter_pertama, $parameter_kedua)
 	$kalimat_query -> execute();
 	return 0;
 }
+ //fungsi buat ngecek tgl bln dan thn
+ function tgl($parameter_pertama){
+	$cek = "/^[0-9'-]+$/";
+	$batas = 2;
+	if (empty($parameter_pertama) || $parameter_pertama == " ") {
+		$data = "*Tanggal harap diisi!";
+	}
+	else if(!preg_match($cek, $parameter_pertama)){
+		$data = "*Tanggal hanya bisa diisi dengan angka";
+	}
+	else if (strpos($parameter_pertama, " ")) {
+		$data = "*Tanggal tidak boleh ada spasi";
+	}
+	else if (strlen($parameter_pertama) < 2) {
+		$hasil = $batas - strlen($parameter_pertama);
+		$data = "*Jumlah inputan tanggal kurang - $hasil harap isi dengan benar";
+	}
+	else if (strlen($parameter_pertama) > 2) {
+		$hasil = strlen($parameter_pertama) - $batas;
+		$data = "*Jumlah inputan tanggal lebih - $hasil harap isi dengan benar";
+	}
+	else if ($parameter_pertama > 31 || $parameter_pertama < 0 ) {
+		$data = "*Tanggal harap diisi dengan benar";
+	}
+	else{
+		$data = True;
+	}
+	return $data;
+ }
+
+ function bln($parameter_pertama){
+	$cek = "/^[0-9'-]+$/";
+	$batas = 2;
+	if (empty($parameter_pertama) || $parameter_pertama == " ") {
+		$data = "*Bulan harap diisi!";
+	}
+	else if(!preg_match($cek, $parameter_pertama)){
+		$data = "*Bulan hanya bisa diisi dengan angka";
+	}
+	else if (strpos($parameter_pertama, " ")) {
+		$data = "*Bulan tidak boleh ada spasi";
+	}
+	else if (strlen($parameter_pertama) < 2) {
+		$hasil = $batas - strlen($parameter_pertama);
+		$data = "*Jumlah inputan bulan kurang - $hasil harap isi dengan benar";
+	}
+	else if (strlen($parameter_pertama) > 2) {
+		$hasil = strlen($parameter_pertama) - $batas;
+		$data = "*Jumlah inputan bulan lebih - $hasil harap isi dengan benar";
+	}
+	else if ($parameter_pertama > 12 || $parameter_pertama < 0) {
+		$data = "*Bulan harap diisi dengan benar";
+	}
+	else{
+		$data = True;
+	}
+	return $data;
+ }
+ function thn($parameter_pertama){
+	$cek = "/^[0-9'-]+$/";
+	$batas = 4;
+	if (empty($parameter_pertama) || $parameter_pertama == " ") {
+		$data = "*Tahun harap diisi!";
+	}
+	else if(!preg_match($cek, $parameter_pertama)){
+		$data = "*Tahun hanya bisa diisi dengan angka";
+	}
+	else if (strpos($parameter_pertama, " ")) {
+		$data = "*Tahun tidak boleh ada spasi";
+	}
+	else if ($parameter_pertama < 0) {
+		$data = "*Tahun harap diisi dengan benar";
+	}
+	else if (strlen($parameter_pertama) < 4) {
+		$hasil = $batas - strlen($parameter_pertama);
+		$data = "*Jumlah inputan Tahun kurang - $hasil harap isi dengan benar";
+	}
+	else if (strlen($parameter_pertama) > 4) {
+		$hasil = strlen($parameter_pertama) - $batas;
+		$data = "*Jumlah inputan Tahun lebih - $hasil harap isi dengan benar";
+	}
+	else{
+		$data = True;
+	}
+	return $data;
+ }
  ?>
