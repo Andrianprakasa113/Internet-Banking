@@ -193,6 +193,20 @@ li{
     animation: animasi 0.8s ease-in-out;
     box-shadow: 3px 3px 5px black;
 }
+.sukses{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
 .update{
     position: relative;
     display: flex;
