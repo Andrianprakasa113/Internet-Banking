@@ -97,7 +97,7 @@ include './fungsi.php';
                 }
                 ?>
              <label class="isitabel1">No Hp</label><br>
-             <input type="text" name="no_hp_user" id="no_hp_user" class="inputan" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['no_hp_user']);} else { echo "{$data['NO_HP_NSB']} ";} ?>"><br>
+             <input type="text" name="no_hp_user" id="no_hp_user" class="inputan" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['no_hp_user']);} else { echo "{$data['NO_HP_NSB']}";} ?>"><br>
              <?php
                 if (isset($simpan)) {
                 ?>

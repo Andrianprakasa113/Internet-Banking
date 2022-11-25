@@ -170,7 +170,6 @@ function cek_saldo($parameter_pertama)
 	$kalimat_query -> bindValue(':no_rek',  $parameter_pertama);
 	$kalimat_query -> execute(); 
 	$data = $kalimat_query -> fetch();
-	var_dump($data);
 	return $data;
 }
 //fungsi buat update data saldo rekening
