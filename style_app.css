@@ -9,7 +9,7 @@
     grid-template-areas: "navigasi kepala"
                             "navigasi isi";
     grid-template-columns: 0.7fr 4fr;
-    grid-template-rows: 0.6fr 4fr ;
+    grid-template-rows: 0.8fr 4fr ;
     background: rgb(48, 48, 48);
     height: 100vh;
 }
@@ -22,6 +22,12 @@
     padding: 2% 2%;
     color: #daa520;
     overflow-x: hidden;
+}
+.kepala h1{
+    width: 10%;
+}
+.kepala .inputan{
+    text-align: center;
 }
 .link_gambar{
 
@@ -119,10 +125,17 @@ li{
     top: 2%;
     left: 50%;
     transform: translate(-50%,0);
-    width: 90%;
-    height: 80%;
+    width: 80%;
+    height: auto;
+    padding: 4%;
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
+}
+.lihat_transaksi p a{
+    text-decoration: none;
+    color: black;
+    font-size: 15pt;
+    line-height: 25pt;
 }
 .daftar_lihat_transaksi table{
     width: 100%;
@@ -166,15 +179,16 @@ li{
 }
 .transaksi{
     position: relative;
-    display: flex;
     border-radius: 8px;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     top: 2%;
     left: 50%;
     transform: translate(-50%,0);
-    width: 90%;
-    height: 80%;
+    width: 40%;
+    height: auto;
+    padding: 4%;
+    line-height: 23pt;
+    margin-bottom: 5%;
     background: rgb(155, 155, 155);
     animation: animasi 0.8s ease-in-out;
     box-shadow: 3px 3px 5px black;
@@ -231,7 +245,8 @@ li{
     position: relative;
     top: 5%;
     width: 60%;
-    margin-top: -30%;
+    margin-top: -25%;
+    margin-left: 5%;
 }
 .isitabel1{
     text-align: justify;
@@ -319,7 +334,7 @@ li{
 }
 .inputan{
     border: none;
-    width: 40%;
+    width: 50%;
     height: auto;
     background: rgba(20, 20, 20, 0.753);
     border-radius: 25px;

@@ -4,7 +4,7 @@ session_start();
 
 //cek dulu bagian adminnya
 if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
-    $kalimat_query = $kon -> prepare('SELECT * FROM admin where USERNAME_ADMIN= :data_admin AND SANDI_ADMIN = :sandi_admin');
+    $kalimat_query = $kon -> prepare('SELECT * FROM admin where USERNAME_ADMIN= :data_admin AND SANDI_ADMIN = SHA2(:sandi_admin,0)');
     $kalimat_query -> bindValue(':data_admin',$_POST['username']);
     $kalimat_query -> bindValue(':sandi_admin',$_POST['password']);
     $kalimat_query -> execute();
@@ -23,7 +23,7 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
     }
     //jika nggak ada di admin cek di nasabah
     else{
-        $kalimat_query = $kon -> prepare('SELECT * FROM nasabah where USERNAME_NSB= :data_user AND PASSWORD_NSB = :sandi_user');
+        $kalimat_query = $kon -> prepare('SELECT * FROM nasabah where USERNAME_NSB= :data_user AND PASSWORD_NSB = SHA2(:sandi_user,0)');
         $kalimat_query -> bindValue(':data_user',$_POST['username']);
         $kalimat_query -> bindValue(':sandi_user',$_POST['password']);
         $kalimat_query -> execute();

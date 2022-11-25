@@ -15,7 +15,7 @@ function cek_alfabet($data){
 	return $data;
 }
 function alfa_num($parameter_pertama){
-	$cek = "/^([a-zA-Z0-9 \. _]+)([a-zA-Z]+)\.([a-zA-Z]{1,})(.[a-zA-Z]{1,})?(.[a-zA-Z]{1,})?$/";
+	$cek = "/^[a-zA-Z0-9. '-]+$/";
 	if (!isset($parameter_pertama) || empty($parameter_pertama)) {
 		$data = '*harap diisi';
 	}

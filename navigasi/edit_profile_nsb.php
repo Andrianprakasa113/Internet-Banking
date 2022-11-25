@@ -69,12 +69,13 @@ include './fungsi.php';
                 <?php if($thn !== True){echo $thn;}?>
                 </label>
                 <?php
+                $gabungkan = @$_POST['thn'].'-'.@$_POST['bln'].'-'.@$_POST['tgl'];
                 }
             
-            $gabungkan = @$_POST['thn'].'-'.@$_POST['bln'].'-'.@$_POST['tgl'];
+            
             ?>
              <label class="isitabel1">Alamat</label><br>
-             <textarea name="alamat_user" id="alamat_user" class="alamat" cols="20" rows="4"><?php if(isset($simpan)){ echo htmlspecialchars($_POST['alamat_user']);} else {echo "{$data['ALAMAT_NSB']}"; }?></textarea><br>
+             <textarea name="alamat_user" id="alamat_user" class="alamat" cols="30" rows="4"><?php if(isset($simpan)){ echo htmlspecialchars($_POST['alamat_user']);} else {echo "{$data['ALAMAT_NSB']}"; }?></textarea><br>
              <?php
                 if (isset($simpan)) {
                 ?>
@@ -110,7 +111,16 @@ include './fungsi.php';
         </div>
      <?php
       if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp) {
-        var_dump($_POST);
+        
+         $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), TGL_NSB = :tgl, ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = :nsb");
+         $kalimat_query -> bindValue(":nsb",$_SESSION['nsb']);
+         $kalimat_query -> bindValue(":nama_nsb",$_POST['nama_user']); 
+         $kalimat_query -> bindValue(":pass_nsb",$_POST['sandi_user']); 
+         $kalimat_query -> bindValue(":tgl",$gabungkan); 
+         $kalimat_query -> bindValue(":alamat",$_POST['alamat_user']); 
+         $kalimat_query -> bindValue(":email",$_POST['email_user']); 
+         $kalimat_query -> bindValue(":no_hp",$_POST['no_hp_user']);
+         $kalimat_query -> execute(); 
      }
      ?>
      </div>
