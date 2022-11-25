@@ -68,9 +68,16 @@
                     <td class="isitabel1">:</td>
                     <td class="isitabel1"><?php echo "{$data['NO_HP_NSB']} "; ?></td>
                 </tr>
-                <tr>
+                <?php
+                if (@$_GET['link'] == 'edit_profile') {
+                    ?>
+                    <tr>
                     <th class="isitabel1"><a href="home.php?link_edit_profile=edit">Edit profile</a></th>
-                </tr>
+                    </tr>
+                    <?php
+                }
+                ?>
+                
             </table>
         </div>
         <?php
