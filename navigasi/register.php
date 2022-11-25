@@ -9,6 +9,7 @@ $home_admin -> execute();
  //buat lebih dahulu variabel ceknya
  $nama_usr = cek_alfabet(@$_POST['nama_user']);
  $pas_usr  = password(@$_POST['sandi_user']);
+ $username = alfa_num(@$_POST['username']);
 
  $tgl = tgl(@$_POST['tgl']);
  $bln = bln(@$_POST['bln']);
@@ -26,7 +27,6 @@ $home_admin -> execute();
     <div>
     <img class="adminprofil" src="./gambar/icon.png" alt>
     </div>
-        
         <div class="edit_inputan">
              <label class="isitabel1">Nama</label><br>
              <td class="isitabel1"><input type="text" name="nama_user" id="nama_user" class="inputan" placeholder="Tidak boleh angka"><br>
@@ -39,6 +39,19 @@ $home_admin -> execute();
                 <?php
                 }
                 ?>
+
+             <label class="isitabel1">Username</label><br>
+             <td class="isitabel1"><input type="text" name="username" id="username" class="inputan" placeholder="Alfanumerik"><br>
+             <?php
+                if (isset($simpan)) {
+                ?>
+                <label class="warning_salah">
+                <?php if($username !== True){echo $username."<br>";}?> 
+                </label>
+                <?php
+                }
+                ?>
+
              <label class="isitabel1">Password</label><br>
              <input type="password" name="sandi_user" id="sandi_user" class="inputan" placeholder="Minimal 8 dan alfanumerik"><br>
              <?php
@@ -111,11 +124,10 @@ $home_admin -> execute();
         </div>
      <?php
       if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp) {
-         $kalimat_query = $kon -> prepare("insert into nasabah (USERNAME_NSB, PASSWORD_NSB, NAMA_NSB, ALAMAT_NSB, EMAIL_NSB, TGL_NSB, NO_HP_NSB) 
-         VALUES
-        (:nama_nsb, SHA2 (:pass_nsb, 0), :tgl, :alamat, :email, :no_hp)");
-         $kalimat_query -> bindValue(":ADMIN", $_SESSION['admin']);
+         $kalimat_query = $kon -> prepare("insert into nasabah (NAMA_NSB, USERNAME_NSB, PASSWORD_NSB, ALAMAT_NSB, EMAIL_NSB, TGL_NSB, NO_HP_NSB) 
+         VALUES (:nama_nsb,:username, SHA2 (:pass_nsb, 0), :tgl, :alamat, :email, :no_hp)");
          $kalimat_query -> bindValue(":nama_nsb",$_POST['nama_user']); 
+         $kalimat_query -> bindValue(":username",$_POST['username']);
          $kalimat_query -> bindValue(":pass_nsb",$_POST['sandi_user']); 
          $kalimat_query -> bindValue(":tgl",$gabungkan); 
          $kalimat_query -> bindValue(":alamat",$_POST['alamat_user']); 
