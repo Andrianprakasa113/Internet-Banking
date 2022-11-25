@@ -9,7 +9,7 @@
         foreach($home_admin as $data){
         ?>
         <div class="hom">
-            <img class="adminprofil" src="./gambar/<?php echo $_SESSION['admin'];?>.jpg" alt>
+            <img class="adminprofil" src="./gambar/<?php echo $_SESSION['nama_admin'];?>.jpg" alt>
             <table >
                 <tr>
                     <th class="isitabel1">Nama</th>
