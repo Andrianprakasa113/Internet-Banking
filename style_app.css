@@ -24,7 +24,7 @@
     overflow-x: hidden;
 }
 .kepala h1{
-    width: 10%;
+    width: 100%;
 }
 .kepala .inputan{
     text-align: center;
@@ -32,7 +32,7 @@
 .link_gambar{
 
     position: relative;
-    left: 99%;
+    left: 81%;
     transform: translate(-15%,0);
 }
 
