@@ -28,6 +28,7 @@ $home_admin -> execute();
     <img class="adminprofil" src="./gambar/icon.png" alt>
     </div>
         <div class="edit_inputan">
+           <form action="register.php" method="post">
              <label class="isitabel1">Nama</label><br>
              <td class="isitabel1"><input type="text" name="nama_user" id="nama_user" class="inputan" placeholder="Tidak boleh angka"><br>
              <?php
@@ -87,7 +88,7 @@ $home_admin -> execute();
             
             
             ?>
-             <label class="isitabel1">Alamat</label><br>
+             <br><label class="isitabel1">Alamat</label><br>
              <textarea name="alamat_user" id="alamat_user" class="alamat" cols="30" rows="4" placeholder="Alamat"></textarea><br>
              <?php
                 if (isset($simpan)) {
@@ -117,6 +118,7 @@ $home_admin -> execute();
                 <label class="warning_salah">
                 <?php if($no_hp !== True){echo $no_hp."<br>";}?> 
                 </label>
+            </form>
                 <?php
                 }
                 ?>
