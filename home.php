@@ -93,7 +93,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             else if(@$_GET['link'] == 'edit_admin' && isset($_SESSION['admin']) && @$_GET["id_admin"]){
                 include 'navigasi/edit_admin.php';
             }
-            else if(@$_GET['link'] == 'hapus_akun' && isset($_SESSION['admin']) && $_GET["hapus"]){
+            else if(@$_GET['link'] == 'hapus_akun' && isset($_SESSION['admin']) && @$_GET["hapus"]){
                 include 'navigasi/hapus_akun.php';
             }
             else if(@$_GET['link'] == 'tambah_data' && isset($_SESSION['admin'])){
