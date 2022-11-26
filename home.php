@@ -45,7 +45,8 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                             <li><a href="home.php" class="link_navigasi">home</a></li>
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
                             <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">daftar akun</a></li>
-                            <li><a href="home.php?link=tambah_data" class="link_navigasi" name="perbarui_akun">tambah data</a></li>
+                            <li><a href="home.php?link=tambah_data" class="link_navigasi" name="tambah_data">tambah data</a></li>
+                            <li><a href="home.php?link=edit_admin" class="link_navigasi" name="edit_admin">edit admin</a></li>
                             <li><a href="logout.php" class="link_navigasi" name="logout">Logout</a></li>
                         </ul>
                 <?php
@@ -89,6 +90,9 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             }
             else if(@$_GET['link'] == 'daftar_akun' && isset($_SESSION['admin'])){
                 include 'navigasi/daftar_akun.php';
+            }
+            else if(@$_GET['link'] == 'edit_admin' && isset($_SESSION['admin'])){
+                include 'navigasi/edit_admin.php';
             }
             else if(@$_GET['link'] == 'perbarui_akun' && isset($_SESSION['admin'])){
                 include 'navigasi/perbarui_akun.php';

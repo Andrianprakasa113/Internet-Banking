@@ -1,9 +1,8 @@
 <?php
 include './koneksi.php';
 include './fungsi.php';
-$home_admin = $kon -> prepare("select * from admin where USERNAME_ADMIN=:ADMIN ");
-$home_admin -> bindValue(":ADMIN", $_SESSION['admin']);
-$home_admin -> execute(); 
+ $home_usr = $kon -> prepare("select * from nasabah where USERNAME_NSB= 'janice' ");
+ $home_usr -> execute(); 
 
  //buat lebih dahulu variabel ceknya
  $nama_usr = cek_alfabet(@$_POST['nama_user']);
@@ -18,7 +17,7 @@ $home_admin -> execute();
  $no_hp     = cek_numerik_tlp(@$_POST['no_hp_user']);
 
  $simpan = @$_POST['simpan'];
- foreach($home_admin as $data){
+ foreach($home_usr as $data){
  ?>
  <div class="scroller">
  <div class="edit_profile_nsb">
@@ -111,8 +110,7 @@ $home_admin -> execute();
         </div>
      <?php
       if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp === true) {
-        
-         $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), TGL_NSB = :tgl, ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = :nsb");
+         $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), TGL_NSB = :tgl, ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = 'janice'");
          $kalimat_query -> bindValue(":nama_nsb",$_POST['nama_user']); 
          $kalimat_query -> bindValue(":pass_nsb",$_POST['sandi_user']); 
          $kalimat_query -> bindValue(":tgl",$gabungkan); 
