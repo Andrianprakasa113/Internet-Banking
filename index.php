@@ -116,7 +116,7 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
         </div>
 
         <div class="footer">
-            <p>cpoyright by @teamBanking</p>
+            <p>copyright by @teamBanking</p>
         </div>
     </div>
 </body>

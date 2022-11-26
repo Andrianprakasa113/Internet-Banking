@@ -2,7 +2,7 @@
 <div class="daftar_akun">
     <?php
     include ('koneksi.php');
-    $home_admin = $kon -> prepare("select nasabah.*,rekening.NO_REK from nasabah inner join rekening ON nasabah.USERNAME_NSB = rekening.USERNAME_NSB");
+    $home_admin = $kon -> prepare("select nasabah.*,rekening.NO_REK, rekening.WAKTU_BUAT_REK from nasabah inner join rekening ON nasabah.USERNAME_NSB = rekening.USERNAME_NSB");
     $home_admin -> execute();
     $no = 1;
     ?>
@@ -32,7 +32,7 @@
             <td class='isi_tabel'><?php echo "{$data['NAMA_NSB']}"; ?></td>
             <td class='isi_tabel'><?php echo "{$data['ALAMAT_NSB']}"; ?></td>
             <td class='isi_tabel'><?php echo "{$data['EMAIL_NSB']} "; ?></td>
-            <td class='isi_tabel'><?php echo "{$data['TGL_NSB']} "; ?></td>
+            <td class='isi_tabel'><?php echo "{$data['WAKTU_BUAT_REK']} "; ?></td>
             <td class='isi_tabel'><?php echo "{$data['NO_HP_NSB']} "; ?></td>
             <td class='isi_tabel'><?php echo "{$data['NO_REK']} "; ?></td>
             <td class="isi_tabel"><a href="home.php?link=edit_admin&id_admin=<?php echo $data['USERNAME_NSB'] ?>"> Edit </a></td>
