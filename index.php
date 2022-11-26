@@ -43,7 +43,7 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
                 
             </div>
             <div class="login">
-                <h2>login</h2>
+                <h2>Login</h2>
                 <form action="validasi_login.php" method="post">
                     <div>
                         <label for="username" class="label">username </label>
