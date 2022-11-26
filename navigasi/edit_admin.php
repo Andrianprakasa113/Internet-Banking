@@ -46,18 +46,6 @@ include './fungsi.php';
                 }
                 ?>
 
-             <?php
-                if (isset($simpan)) {
-                ?>
-                <label class="warning_salah">
-                <?php if($tgl !== True){echo $tgl."<br>";}?> 
-                <?php if($bln !== True){echo $bln."<br>";}?>
-                <?php if($thn !== True){echo $thn;}?>
-                </label>
-                <?php
-                $gabungkan = @$_POST['thn'].'-'.@$_POST['bln'].'-'.@$_POST['tgl'];
-                }
-            
             
             ?>
              <label class="isitabel1">Alamat</label><br>
@@ -96,11 +84,10 @@ include './fungsi.php';
              <input type="submit" value="Simpan" name="simpan" class="simpan">
         </div>
      <?php
-      if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp === true) {
+      if (isset($simpan) && $nama_usr && $pas_usr  && $alamat_usr && $email && $no_hp === true) {
          $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), TGL_NSB = :tgl, ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = 'janice'");
          $kalimat_query -> bindValue(":nama_nsb",$_POST['nama_user']); 
          $kalimat_query -> bindValue(":pass_nsb",$_POST['sandi_user']); 
-         $kalimat_query -> bindValue(":tgl",$gabungkan); 
          $kalimat_query -> bindValue(":alamat",$_POST['alamat_user']); 
          $kalimat_query -> bindValue(":email",$_POST['email_user']); 
          $kalimat_query -> bindValue(":no_hp",$_POST['no_hp_user']);
