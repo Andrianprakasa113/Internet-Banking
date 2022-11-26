@@ -110,7 +110,7 @@ include './fungsi.php';
              <input type="submit" value="Simpan" name="simpan" class="simpan">
         </div>
      <?php
-      if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp) {
+      if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp === true) {
         
          $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), TGL_NSB = :tgl, ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = :nsb");
          $kalimat_query -> bindValue(":nsb",$_SESSION['nsb']);
