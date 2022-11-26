@@ -125,13 +125,10 @@ $home_admin -> execute();
              <input type="submit" value="Simpan" name="simpan" class="simpan">
         </div>
      <?php
-<<<<<<< HEAD
-      if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp === true) {
-         $kalimat_query = $kon -> prepare("insert into nasabah (NAMA_NSB, USERNAME_NSB, PASSWORD_NSB, ALAMAT_NSB, EMAIL_NSB, TGL_NSB, NO_HP_NSB) 
+
 =======
-      if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp) {
+      if (isset($simpan) && $nama_usr && $pas_usr && $tgl && $bln && $thn && $alamat_usr && $email && $no_hp === true) {
          $kalimat_query = $kon -> prepare("insert into nasabah (NAMA_NSB, USERNAME_NSB, PASSWORD_NSB, TGL_NSB, ALAMAT_NSB, EMAIL_NSB, NO_HP_NSB) 
->>>>>>> 6fc7fdc8fe9c7a2f8b1f61386dc8e42022936360
          VALUES (:nama_nsb,:username, SHA2 (:pass_nsb, 0), :tgl, :alamat, :email, :no_hp)");
          $kalimat_query -> bindValue(":nama_nsb",$_POST['nama_user']); 
          $kalimat_query -> bindValue(":username",$_POST['username']);
