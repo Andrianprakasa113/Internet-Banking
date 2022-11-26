@@ -71,7 +71,7 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
                         <img src="gambar/rosi.jpg" alt="icon" class="gambar_biodata">
                     </div>
                     <div class="isi_biodata">
-                        <p class="isi">Isi biodata</p> 
+                        <p class="isi">Fahrurrosi</p> 
                     </div>
                 </div>
     
@@ -92,7 +92,7 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
                         <img src="gambar/fadil.jpg" alt="icon" class="gambar_biodata">
                     </div>
                     <div class="isi_biodata">
-                        <p class="isi">Isi biodata</p> 
+                        <p class="isi">Moh. Fadil Abdillah</p> 
                     </div>
                 </div>
             </div>
@@ -100,9 +100,19 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
         </div>
         <!-- buat isi halaman bagian untuk contact us perlu diedit lagi -->
         <div class="contact_us" id="contact">
-            <h3>CONTACT US</h3>
-            <p>BankSejahtera@gmail.com</p>
-            <p>+62 8819026787</p>
+            <div class="isi_contact">
+                <h3>CONTACT US</h3><br>
+                <p>BankSejahtera@gmail.com</p><br>
+                <p>+62 8819026787</p>
+                <img src="gambar/facebook.png" alt="#" class="icon-footer">
+				<img src="gambar/instagram.png" alt="#" class="icon-footer">
+				<img src="gambar/youtube.png" alt="#" class="icon-footer">
+            </div>
+            <div class="isi_contact">
+                <h4>BANK SEJAHTERA</h4>
+                <p>Jl Pahlawan No.76 Telang, Kamal 5643,</p>
+                <p>Bangkalan, Jawa Timur</p>
+            </div>
         </div>
 
         <div class="footer">

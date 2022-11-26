@@ -180,10 +180,16 @@ body{
 }
 .contact_us{
     display: flex;
-    text-align: center;
     align-items: center;
+    justify-content: center;
     background: #393E46;
     height: 100vh;
+    color: white;
+}
+.isi_contact{
+    display: block;
+
+
 }
 .footer {
     position: relative;
@@ -194,4 +200,8 @@ body{
     padding: 1%;
     border-radius:100px 100px 0 0;
     
+}
+
+.icon-footer{
+    width: 15%;
 }
