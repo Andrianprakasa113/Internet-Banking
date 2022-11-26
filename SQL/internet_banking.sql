@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2022 at 04:50 PM
+-- Generation Time: Nov 26, 2022 at 02:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,8 +40,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`USERNAME_ADMIN`, `SANDI_ADMIN`, `NAMA_ADMIN`, `EMAIL_ADMIN`, `NO_HP_ADMIN`) VALUES
-('ad', '123', 'andre', 'andre@gmail.com', '81'),
-('admin', '123', 'andre', 'andre@gmail.com', '81');
+('andre', '8a8b53dd046a36328b661315ffd6a594c9229ab4672fc6207c9f3ff8449516f0', 'andre', 'andre@gmail.com', '895411010059'),
+('fadil', '341c3dabb062eed58733ecb311fa446aa08e220a59fef91a61b4bae8f25f6064', 'fadil', 'fadil@gmail.com', '82232744038'),
+('rosi', '59665e357cf06640f3e1579c9ac5a488ff25905d652e0e68979d51c833cfc24e', 'rosi', 'rosi@gmail.com', '82337307547');
 
 -- --------------------------------------------------------
 
@@ -65,13 +66,9 @@ CREATE TABLE `nasabah` (
 --
 
 INSERT INTO `nasabah` (`USERNAME_NSB`, `USERNAME_ADMIN`, `PASSWORD_NSB`, `NAMA_NSB`, `ALAMAT_NSB`, `EMAIL_NSB`, `TGL_NSB`, `NO_HP_NSB`) VALUES
-('Andra', NULL, '12', 'Andra', 'lolol', 'andra@com', '2022-11-22', '123'),
-('Janice', NULL, '12', 'Janice', 'lolol', 'Janicea@com', '2022-11-22', '123'),
-('Mapa', NULL, 'az', 'Mapa Mahardika', 'asdwa', 'awda@co', '2022-11-22', '123'),
-('Nulce', NULL, '12', 'Nulce', 'lolol', 'Nulcea@com', '2022-11-22', '123'),
-('Sam', NULL, '12', 'Sam', 'lolol', 'Sam@com', '2022-11-22', '123'),
-('Tatak', NULL, '12', 'Tatak', 'lolol', 'Tataka@com', '2022-11-22', '123'),
-('Yosua', NULL, 'az', 'yasudd', 'Yosua', 'yasuda@com', '2022-11-22', '912');
+('Agus', 'fadil', '1baedd25059490937a8f7a52dbaf5a7c168bc49f5bac0d7bc48bd6b58a84a421', 'Agus', 'Telang Lucu no 76', 'agus@gmail.com', '2001-01-08', '86113917612'),
+('janice', 'andre', '4ca6e67d64009d3ec31d93d53a96c47bd30724da0decbbe26ff6ac58eb1f6d58', 'Janice', 'Nangka indah no 26', 'Janicea@gmail.com', '2004-03-05', '86013917612'),
+('puspa', 'rosi', '06f41bfd47a88780d98043db32948f2ee4e50f5a8b33bc345199c9a7326617c0', 'puspa', 'JL. Puspa no 2', 'puspa@gmail.com', '0000-00-00', '86013917612');
 
 -- --------------------------------------------------------
 
@@ -91,10 +88,12 @@ CREATE TABLE `rekening` (
 --
 
 INSERT INTO `rekening` (`USERNAME_NSB`, `NO_REK`, `WAKTU_BUAT_REK`, `SALDO_REK`) VALUES
-('Andra', '123124', '0000-00-00', 1231231.00),
-('Andra', '212312', '2022-11-03', 123123120.00),
-('Janice', '212312', '2022-11-03', 223123120.00),
-('Tatak', '212112', '2022-11-03', 123123120.00);
+('agus', '333900977912', '2022-11-26', 460000.00),
+('agus', '343900967912', '2022-11-26', 1000000.00),
+('agus', '932911877912', '2022-11-26', 75000.00),
+('janice', '124900977912', '2022-11-26', 750000.00),
+('janice', '756400977912', '2022-11-26', 23000.00),
+('puspa', '135923977912', '2022-11-26', 50000.00);
 
 -- --------------------------------------------------------
 
@@ -108,6 +107,14 @@ CREATE TABLE `transaksi` (
   `no_rek_pengirim` decimal(12,0) NOT NULL,
   `no_rek_penerima` decimal(12,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`WAKTU_TRANSAKSI`, `JUM_TRANSFER`, `no_rek_pengirim`, `no_rek_penerima`) VALUES
+('2022-11-26 20:15:45', 50000.00, '756400977912', '333900977912'),
+('2022-11-26 20:15:56', 50000.00, '756400977912', '333900977912');
 
 --
 -- Indexes for dumped tables
