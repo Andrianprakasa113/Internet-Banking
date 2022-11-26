@@ -297,7 +297,7 @@ li{
     overflow: scroll;
     scrollbar-color: rebeccapurple green;
     scrollbar-width: thin;
-  }
+}
 .tambah_data{
     position: relative;
     display: flex;
