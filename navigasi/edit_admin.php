@@ -5,7 +5,7 @@ include './fungsi.php';
  $home_usr -> bindValue(":nsb", $_GET["id_admin"]);
  $home_usr -> execute();
  
- $id_admin = $home_usr->fetch();
+//  $id = $home_usr->fetch();
 
  //buat lebih dahulu variabel ceknya
  $nama_usr = cek_alfabet(@$_POST['nama_user']);
@@ -26,6 +26,7 @@ include './fungsi.php';
     </div>
         
         <div class="edit_inputan">
+            <input type="hidden" value="<?php echo $data['USERNAME_NSB'] ;?>" name="id">
              <label class="isitabel1">Nama</label><br>
              <td class="isitabel1"><input type="text" name="nama_user" id="nama_user" class="inputan" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['nama_user']);} else {echo "{$data['NAMA_NSB']}"; }?>"><br>
              <?php
@@ -87,7 +88,8 @@ include './fungsi.php';
         </div>
      <?php
       if (isset($simpan) && $nama_usr  && $pas_usr  && $alamat_usr && $email && $no_hp === true) {
-         $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = {$id_admin['USERNAME_NSB']}");
+         $kalimat_query = $kon -> prepare("UPDATE nasabah SET NAMA_NSB = :nama_nsb, PASSWORD_NSB = SHA2 (:pass_nsb, 0), ALAMAT_NSB = :alamat, EMAIL_NSB = :email, NO_HP_NSB = :no_hp where USERNAME_NSB = :add_data");
+         $kalimat_query -> bindValue(":add_data",$_POST['id']); 
          $kalimat_query -> bindValue(":nama_nsb",$_POST['nama_user']); 
          $kalimat_query -> bindValue(":pass_nsb",$_POST['sandi_user']); 
          $kalimat_query -> bindValue(":alamat",$_POST['alamat_user']); 

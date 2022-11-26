@@ -72,9 +72,6 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             if(@$_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
-            else if(@$_GET['link'] == 'edit_admin' && isset($_SESSION['admin']) && @$_GET["id_admin"]!=" "){
-                include 'navigasi/edit_admin.php';
-            }
             else if(@$_GET['link_edit_profile'] == 'edit' && isset($_SESSION['nsb'])){
                 include 'navigasi/edit_profile_nsb.php';
             }
@@ -93,7 +90,10 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             else if(@$_GET['link'] == 'daftar_akun' && isset($_SESSION['admin'])){
                 include 'navigasi/daftar_akun.php';
             }
-            else if(@$_GET['link'] == 'hapus_akun' && isset($_SESSION['admin'])){
+            else if(@$_GET['link'] == 'edit_admin' && isset($_SESSION['admin']) && @$_GET["id_admin"]){
+                include 'navigasi/edit_admin.php';
+            }
+            else if(@$_GET['link'] == 'hapus_akun' && isset($_SESSION['admin']) && $_GET["hapus"]){
                 include 'navigasi/hapus_akun.php';
             }
             else if(@$_GET['link'] == 'tambah_data' && isset($_SESSION['admin'])){
