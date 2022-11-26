@@ -43,10 +43,10 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                     <h1>BANSER</h1>
                         <ul>
                             <li><a href="home.php" class="link_navigasi">home</a></li>
-                            <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
-                            <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">daftar akun</a></li>
-                            <li><a href="home.php?link=tambah_data" class="link_navigasi" name="tambah_data">tambah data</a></li>
-                            <li><a href="logout.php" class="link_navigasi" name="logout">Logout</a></li>
+                            <li><a href="home.php?link=register" class="link_navigasi">register</a></li>
+                            <li><a href="home.php?link=daftar_akun" class="link_navigasi">daftar akun</a></li>
+                            <li><a href="home.php?link=tambah_data" class="link_navigasi">tambah data</a></li>
+                            <li><a href="logout.php" class="link_navigasi">Logout</a></li>
                         </ul>
                 <?php
             }
@@ -55,10 +55,10 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                 <h1>BANSER</h1>
                     <ul>
                         <li><a href="home.php" class="link_navigasi">home</a></li>
-                        <li><a href="home.php?link=lihat_transaksi" class="link_navigasi" name="lihat_transaksi">lihat transaksi</a></li>
-                        <li><a href="home.php?link=melakukan_transaksi" class="link_navigasi" name="melakukan_transaksi" >transaksi</a></li>
-                        <li><a href="home.php?link=edit_profile" class="link_navigasi" name="edit_profile">edit profile</a></li>
-                        <li><a href="logout.php" class="link_navigasi" name="logout">Logout</a></li>
+                        <li><a href="home.php?link=lihat_transaksi" class="link_navigasi">lihat transaksi</a></li>
+                        <li><a href="home.php?link=melakukan_transaksi" class="link_navigasi" >transaksi</a></li>
+                        <li><a href="home.php?link=edit_profile" class="link_navigasi">edit profile</a></li>
+                        <li><a href="logout.php" class="link_navigasi">Logout</a></li>
                     </ul>
             <?php
             }
