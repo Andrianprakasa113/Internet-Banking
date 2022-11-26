@@ -22,9 +22,6 @@ include './fungsi.php';
  ?>
  <div class="scroller">
  <div class="edit_profile_nsb">
-    <div>
-    <img class="adminprofil" src="./gambar/icon.png" alt>
-    </div>
         
         <div class="edit_inputan">
              <label class="isitabel1">Nama</label><br>
