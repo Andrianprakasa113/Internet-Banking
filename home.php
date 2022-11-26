@@ -72,7 +72,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
             if(@$_GET['link_no_rek'] != '' && isset($_SESSION['nsb'])){
                 include 'navigasi/lihat_transaksi.php';
             }
-            else if(isset($_SESSION['admin']) && @$_GET["id_admin"]!=""){
+            else if(@$_GET['link'] == 'edit_admin' && isset($_SESSION['admin']) && @$_GET["id_admin"]!=" "){
                 include 'navigasi/edit_admin.php';
             }
             else if(@$_GET['link_edit_profile'] == 'edit' && isset($_SESSION['nsb'])){
