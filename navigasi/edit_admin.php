@@ -8,9 +8,6 @@ include './fungsi.php';
  $nama_usr = cek_alfabet(@$_POST['nama_user']);
  $pas_usr  = password(@$_POST['sandi_user']);
 
- $tgl = tgl(@$_POST['tgl']);
- $bln = bln(@$_POST['bln']);
- $thn = thn(@$_POST['thn']);
 
  $alamat_usr = alfa_num(@$_POST['alamat_user']);
  $email     = alamat_email(@$_POST['email_user']);
@@ -49,16 +46,6 @@ include './fungsi.php';
                 }
                 ?>
 
-             <label class="isitabel1" >Tanggal lahir</label><br>
-                <?php
-                //buat inputan tanggal
-                $pisahkan = explode("-",$data['TGL_NSB']);
-                ?>
-             <input type="text" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['tgl']);} else { echo "{$pisahkan[2]}"; }?>" name="tgl" class="tgl"> - 
-             
-             <input type="text" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['bln']);} else { echo "{$pisahkan[1]}"; }?>" name="bln" class="bln"> - 
-             <input type="text" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['thn']);} else { echo "{$pisahkan[0]}"; }?>" name="thn" class="thn">
-             <br>
              <?php
                 if (isset($simpan)) {
                 ?>
