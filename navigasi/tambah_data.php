@@ -18,6 +18,9 @@ $cek_rek -> execute();
 
 $cek_rek1 = $cek_rek->rowCount();
 
+$data_rek =true;
+$data_cek = true; 
+
 $username = alfa_num(@$_POST['username']);
 $rek = cek_numerik_rek(@$_POST['no_rek']);
 $simpan = @$_POST['simpan'];
@@ -60,7 +63,7 @@ foreach($home_admin as $data){
     </div>
 
 <?php
-if (isset($simpan)&&$username && $rek  === true){
+if (isset($simpan)&&$username && $rek  === true && $data_rek && $data_cek){
     $kalimat_query = $kon -> prepare("insert into rekening (USERNAME_NSB,NO_REK, WAKTU_BUAT_REK) 
             VALUES (:username,:no_rek, now())");
     $kalimat_query -> bindValue(":username",$_POST['username']);
