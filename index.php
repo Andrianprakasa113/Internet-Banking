@@ -78,10 +78,11 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
                 <div class="tempat_biodata">
                     <div class="gambar">
                         <!-- Untuk gamabr bisa ambil gambar pribadi dengan ukuran 1:1 -->
-                        <img src="img_258083.png" alt="icon" class="gambar_biodata">
+                        <img src="gambar/andre.jpg" alt="icon" class="gambar_biodata">
                     </div>
                     <div class="isi_biodata">
-                        <p class="isi">Isi biodata</p> 
+                        <p class="isi">Andrian Andi Prakasa</p> 
+                        <p class="isi"></p>
                     </div>
                 </div>
     
