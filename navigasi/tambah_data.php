@@ -6,9 +6,6 @@ $home_admin -> bindValue(":ADMIN", $_SESSION['admin']);
 $home_admin -> execute();
 
 $username = alfa_num(@$_POST['username']);
-$tgl = tgl(@$_POST['tgl']);
-$bln = bln(@$_POST['bln']);
-$thn = thn(@$_POST['thn']);
 $rek = cek_numerik_rek(@$_POST['no_rek']);
 $simpan = @$_POST['simpan'];
 foreach($home_admin as $data){
