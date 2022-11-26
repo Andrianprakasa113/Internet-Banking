@@ -46,7 +46,6 @@ if (isset($_SESSION['admin']) || isset($_SESSION['nsb'])) {
                             <li><a href="home.php?link=register" class="link_navigasi" name="register">register</a></li>
                             <li><a href="home.php?link=daftar_akun" class="link_navigasi" name="daftar_akun">daftar akun</a></li>
                             <li><a href="home.php?link=tambah_data" class="link_navigasi" name="tambah_data">tambah data</a></li>
-                            <li><a href="home.php?link=edit_admin" class="link_navigasi" name="edit_admin">edit admin</a></li>
                             <li><a href="logout.php" class="link_navigasi" name="logout">Logout</a></li>
                         </ul>
                 <?php

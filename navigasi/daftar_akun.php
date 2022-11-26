@@ -25,13 +25,14 @@
             <td class='isi_tabel'><?php echo "{$data['TGL_NSB']} "; ?></td>
             <td class='isi_tabel'><?php echo "{$data['NO_HP_NSB']} "; ?></td>
             <td class='isi_tabel'><?php echo "{$data['NO_REK']} "; ?></td>
-            <td class="isi_tabel"><a href="navigasi/edit_admin.php"> Edit </a></td>
+            <td class="isi_tabel"><a href="home.php?link=edit_admin"> Edit </a></td>
             <td class="isi_tabel"><a href="home.php?link=<?php echo $data['USERNAME_NSB']?>" name="delete"> Delete </a></td>
         </tr>
         <?php
+        
         }
         ?>
-        </div>
+
     </table>
 </div>
 </div>
