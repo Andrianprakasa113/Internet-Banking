@@ -13,17 +13,18 @@ include './koneksi.php';
  ?>
  <div class="scroller">
         <div class="tambah_data">
-            <input type="text" value="<?php echo $data['USERNAME_NSB'] ;?>" name="hapus">
+            <input type="text" value="<?php echo $data['USERNAME_NSB'] ;?>" name="hps">
             <input type="text" value="<?php echo $data['NO_REK']; ?>" name="rk">
              <h2>Confirm hapus data? </h2>
-             <input type="submit" value="Confirm" name="simpan" class="simpan">
-             <a href="home.php?link=daftar_akun" class="simpan">cancel</a>
+             <input type="submit" value="Confirm" name="simpan1" class="simpan">
+             <a href="home.php?link=daftar_akun" class="simpan">Back</a>
         </div>
-     <?php
-      if (isset($simpan) === true) {
-         $kalimat_query = $kon -> prepare("DELETE FROM rekening WHERE rekening.USERNAME_NSB = :hapus AND CONCAT(rekening.NO_REK) = :rek ");
+        <?php
+      if (isset($_POST['simpan1'])) {
+        echo "ok";
+         $kalimat_query = $kon -> prepare("DELETE FROM rekening WHERE USERNAME_NSB = :hapus");
          $kalimat_query -> bindValue(":hapus",$_POST['hps']); 
-         $kalimat_query -> bindValue(":rek",$_POST['rk']); 
+        //  $kalimat_query -> bindValue(":rek",$_POST['rk']); 
          $kalimat_query -> execute(); 
      }
      ?>
