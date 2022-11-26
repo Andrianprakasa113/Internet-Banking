@@ -100,7 +100,9 @@ if (!isset($_SESSION['admin']) && !isset($_SESSION['nsb'])) {
         </div>
         <!-- buat isi halaman bagian untuk contact us perlu diedit lagi -->
         <div class="contact_us" id="contact">
-
+            <h3>CONTACT US</h3>
+            <p>BankSejahtera@gmail.com</p>
+            <p>+62 8819026787</p>
         </div>
 
         <div class="footer">

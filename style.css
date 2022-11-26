@@ -179,6 +179,9 @@ body{
     transform: translate(0,-50%);
 }
 .contact_us{
+    display: flex;
+    text-align: center;
+    align-items: center;
     background: #393E46;
     height: 100vh;
 }
