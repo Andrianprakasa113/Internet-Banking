@@ -30,15 +30,15 @@ foreach($home_admin as $data){
 <div class="tambah_data">
     <div class="edit_inputan">
         <label class="isitabel1">Username</label><br>
-        <td class="isitabel1"><input type="text" name="username" id="username" class="inputan" placeholder="Alfanumerik"><br>
+        <td class="isitabel1"><input type="text" name="username" id="username" class="inputan" placeholder="Alfanumerik" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['username']);} else {echo "{$data['']}"; }?>"><br>
                 <?php
-                    
                     if (isset($simpan)) {
                 ?>
                     <label class="warning_salah">
                     <?php if($username !== True){echo $username."<br>";
                     }if($hsl_cek==0){echo "*user tidak ada!";
                     $data_cek=false;} ?> 
+                    <br>
             </label>
                 <?php
                 }
@@ -46,7 +46,7 @@ foreach($home_admin as $data){
 
 
             <label class="isitabel1">Norek</label><br>
-                <td class="isitabel1"><input type="text" name="no_rek" id="no_rek" class="inputan" placeholder="Numerik"><br>
+                <td class="isitabel1"><input type="text" name="no_rek" id="no_rek" class="inputan" placeholder="Numerik"  value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['no_rek']);} else {echo "{$data['']}"; }?>"><br>
                 <?php
                     if (isset($simpan)) {
                 ?>

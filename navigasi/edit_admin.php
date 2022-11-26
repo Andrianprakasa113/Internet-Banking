@@ -20,11 +20,7 @@ include './fungsi.php';
  foreach($home_usr as $data){
  ?>
  <div class="scroller">
- <div class="edit_profile_nsb">
-    <div>
-    <img class="adminprofil" src="./gambar/icon.png" alt>
-    </div>
-        
+ <div class="edit_profile_nsb">        
         <div class="edit_inputan">
             <input type="hidden" value="<?php echo $data['USERNAME_NSB'] ;?>" name="id">
              <label class="isitabel1">Nama</label><br>

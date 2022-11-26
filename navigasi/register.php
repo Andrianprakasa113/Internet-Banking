@@ -24,13 +24,10 @@ $home_admin -> execute();
  ?>
  <div class="scroller">
  <div class="edit_profile_nsb">
-    <div>
-    <img class="adminprofil" src="./gambar/icon.png" alt>
-    </div>
         <div class="edit_inputan">
            <form action="register.php" method="post">
              <label class="isitabel1">Nama</label><br>
-             <td class="isitabel1"><input type="text" name="nama_user" id="nama_user" class="inputan" placeholder="Tidak boleh angka"><br>
+             <td class="isitabel1"><input type="text" name="nama_user" id="nama_user" class="inputan" placeholder="Tidak boleh angka"  value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['nama_user']);}?>"><br>
              <?php
                 if (isset($simpan)) {
                 ?>
@@ -42,7 +39,7 @@ $home_admin -> execute();
                 ?>
 
              <label class="isitabel1">Username</label><br>
-             <td class="isitabel1"><input type="text" name="username" id="username" class="inputan" placeholder="Alfanumerik"><br>
+             <td class="isitabel1"><input type="text" name="username" id="username" class="inputan" placeholder="Alfanumerik" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['username']);}?>"><br>
              <?php
                 if (isset($simpan)) {
                 ?>
@@ -70,9 +67,9 @@ $home_admin -> execute();
                 //buat inputan tanggal
                 $pisahkan =@explode("-",$data['TGL_NSB']);
                 ?>
-             <input type="text"placeholder="Tanggal" name="tgl" class="tgl"> - 
-             <input type="text"placeholder="Bulan" name="bln" class="bln"> - 
-             <input type="text"placeholder="Tahun" name="thn" class="thn">
+             <input type="text"placeholder="Tanggal" name="tgl" class="tgl" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['tgl']);}?>"> - 
+             <input type="text"placeholder="Bulan" name="bln" class="bln" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['bln']);}?>"> - 
+             <input type="text"placeholder="Tahun" name="thn" class="thn" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['thn']);}?>">
              <br>
              <?php
                 if (isset($simpan)) {
@@ -89,7 +86,7 @@ $home_admin -> execute();
             
             ?>
              <br><label class="isitabel1">Alamat</label><br>
-             <textarea name="alamat_user" id="alamat_user" class="alamat" cols="30" rows="4" placeholder="Alamat"></textarea><br>
+             <textarea name="alamat_user" id="alamat_user" class="alamat" cols="30" rows="4" placeholder="Alamat" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['alamat_user']);}?>"></textarea><br>
              <?php
                 if (isset($simpan)) {
                 ?>
@@ -100,7 +97,7 @@ $home_admin -> execute();
                 }
                 ?>
              <label class="isitabel1">Email</label><br>
-             <input type="text" name="email_user" id="email_user" class="inputan" placeholder="Email"><br>
+             <input type="text" name="email_user" id="email_user" class="inputan" placeholder="Email" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['email_user']);}?>"><br>
              <?php
                 if (isset($simpan)) {
                 ?>
@@ -111,7 +108,7 @@ $home_admin -> execute();
                 }
                 ?>
              <label class="isitabel1">No Hp</label><br>
-             <input type="text" name="no_hp_user" id="no_hp_user" class="inputan" placeholder="Minimal 12"><br>
+             <input type="text" name="no_hp_user" id="no_hp_user" class="inputan" placeholder="Minimal 12" value="<?php if(isset($simpan)){ echo htmlspecialchars($_POST['no_hp_user']);} ?>"><br>
              <?php
                 if (isset($simpan)) {
                 ?>
