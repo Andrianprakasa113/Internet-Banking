@@ -4,6 +4,7 @@
     include ('koneksi.php');
     $home_admin = $kon -> prepare("select nasabah.*,rekening.NO_REK from nasabah inner join rekening ON nasabah.USERNAME_NSB = rekening.USERNAME_NSB");
     $home_admin -> execute();
+    $no = 1;
     ?>
     <table>
         <tr>
@@ -17,8 +18,17 @@
         </tr>
         <?php
         foreach($home_admin as $data){
+                if ($no%2==1) {
+                    ?>
+                <tr class="warna1">
+                <?php
+                }
+                else {
+                    ?>
+                    <tr class="warna2">
+                    <?php
+                }
             ?>
-        <tr>
             <td class='isi_tabel'><?php echo "{$data['NAMA_NSB']}"; ?></td>
             <td class='isi_tabel'><?php echo "{$data['ALAMAT_NSB']}"; ?></td>
             <td class='isi_tabel'><?php echo "{$data['EMAIL_NSB']} "; ?></td>
