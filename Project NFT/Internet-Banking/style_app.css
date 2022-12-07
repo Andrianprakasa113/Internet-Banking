@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    overflow-y: hidden;
+}
+.bungkus{
+    /* position: fixed; */
+    display: grid;
+    grid-template-areas: "navigasi kepala"
+                            "navigasi isi";
+    grid-template-columns: 0.7fr 4fr;
+    grid-template-rows: 0.8fr 4fr ;
+    background: rgb(48, 48, 48);
+    height: 100vh;
+}
+.kepala{
+    grid-area: kepala;
+    background: rgb(0, 0, 0);
+    display: flex;
+    font-size: 12pt;
+    box-shadow: 0 0 10px black;
+    padding: 2% 2%;
+    color: #daa520;
+    overflow-x: hidden;
+}
+.kepala h1{
+    width: 100%;
+}
+.kepala .inputan{
+    text-align: center;
+}
+.link_gambar{
+    position: relative;
+    left: 42%;
+    transform: translate(-15%,0);
+}
+
+.headimg{
+    position: inherit;
+    width: 10%;
+    margin-right: -5%;
+    border-radius: 100%;
+}
+.navigasi{
+    width: 100%;
+    height: 100%;
+    background: #f7b611 fixed;
+    grid-area: navigasi;
+}
+.isi_navigasi{
+    /* position: fixed; */
+    margin-bottom: 10%;
+    
+}
+.isi_navigasi h1{
+    margin: 10% 0 10% 19%;
+    font-style: italic;
+    border-bottom: 3px solid rgb(58, 54, 54);
+    width: 80%;
+    font-size: 20pt;
+}
+li{
+    list-style: none;
+    padding: 10% 0;
+}
+
+.link_navigasi{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    font-size: 110%;
+    font-weight: 600;
+}
+
+.isi{
+    grid-area: isi;
+    /* height: 100vh; */
+}
+/* ini bagian style yang filenya dipanggil dari sini sampai line 164 */
+.daftar_akun{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+@keyframes animasi {
+    from{
+        left: 40%;
+        opacity: 0;
+    }
+    to{
+        left: 50%;
+        opacity: 1;
+    }
+}
+.edit_profile{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.lihat_transaksi{
+    position: relative;
+    /* display: flex; */
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: auto;
+    padding: 4%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.lihat_transaksi p a{
+    text-decoration: none;
+    color: black;
+    font-size: 15pt;
+    line-height: 25pt;
+}
+.daftar_lihat_transaksi table{
+    width: 100%;
+    border: solid 1px black;
+    border-spacing: 0;
+}
+.daftar_lihat_transaksi th{
+    border: solid 1px rgb(80, 80, 80);
+    background: rgb(27, 27, 27);
+    color: goldenrod;
+    padding:0 0.5%;
+    width: 1%;
+}
+.daftar_lihat_transaksi td{
+    border: solid 1px black;
+    padding:0 0.5%;
+}
+.warna1{
+    background: rgb(204, 204, 204);
+}
+.warna2{
+    background: rgb(255, 207, 85);
+}
+.isi_list_lihat_transaksi{
+    text-align: center;
+    position: relative;
+    width: 50%;
+    top : 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    line-height: 25pt;
+}
+.daftar_lihat_transaksi{
+    text-align: center;
+    position: relative;
+    width: 90%;
+    top : 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    line-height: 25pt;
+}
+.transaksi{
+    position: relative;
+    border-radius: 8px;
+    text-align: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 40%;
+    height: auto;
+    padding: 4%;
+    line-height: 23pt;
+    margin-bottom: 5%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+    box-shadow: 3px 3px 5px black;
+}
+.sukses{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.update{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    /* justify-content: center; */
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.hom{
+    font-size: 25px;
+    position: relative;
+    display: flex;
+    
+    border-radius: 8px;
+    /* justify-content: right; */
+    padding: 2%;
+    align-items: center;
+    top: 4%;
+    left:50%;
+    transform: translate(-50%,0);
+    width: 70%;
+    padding: 4% 2%;
+    height: auto;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+
+.edit_profile_nsb{
+    font-size: 25px;
+    position: relative;
+    border-radius: 8px;
+    padding: 2%;
+    top: 4%;
+    left:50%;
+    margin-bottom: 4%;
+    transform: translate(-50%,0);
+    width: 70%;
+    padding: 4% 2%;
+    height: auto;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.edit_inputan{
+    position: relative;
+    top :2%;
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.isitabel1{
+    text-align: justify;
+    border: 0px solid black;
+}
+.adminprofil{
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    width: 25%;
+    margin-right: 5.5%;
+    margin-left: 5%;
+    border-radius: 100%;
+    float: right;
+}
+.register{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 100%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.scroller {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+}
+.tambah_data{
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 80%;
+    height: 80%;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.daftar_akun{
+    position: relative;
+    border-radius: 8px;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 95%;
+    height: auto;
+    padding: 4% 0;
+    background: rgb(155, 155, 155);
+    animation: animasi 0.8s ease-in-out;
+}
+.daftar_akun table{
+    width: 95%;
+    border: solid 1px black;
+    border-spacing: 0;
+    column-span: all;
+}
+.isi_tabel{
+    border: solid 1px black;
+    /* width: 40%;
+    height: 40%; */
+
+}
+/* buat desain pesan kesalahan */
+.warning_salah{
+    color: red;
+    font-size: 10pt;
+    font-style: italic;
+    text-align: center;
+}
+.inputan{
+    border: none;
+    width: 50%;
+    height: auto;
+    background: rgba(20, 20, 20, 0.753);
+    border-radius: 25px;
+    padding: 1% 3%;
+    color: whitesmoke;
+    transition: 0.8s;
+}
+.tgl, .bln, .thn, .alamat{
+    text-align: center;
+    border: none;
+    background: rgba(20, 20, 20, 0.753);
+    color: whitesmoke;
+    padding: 1% 3%;
+    border-radius: 25px;
+    transition: 0.8s;
+}
+.tgl{
+    width: 10%;
+}
+.bln{
+    width: 15%;
+}
+.thn{
+    width: 20%;
+}
+.alamat{
+    text-align: justify;
+    border-radius: 5px;
+    text-indent: 13px;
+}
+.simpan{
+    border: none;
+    background: goldenrod;
+    padding: 1.5% 3%;
+    border-radius: 4px;
+    transition: 0.8s;
+}
+.inputan, .tgl, .bln, .thn, .alamat, .simpan{
+    margin: 3% 4%;
+}
+.inputan:hover, .tgl:hover, .bln:hover, .thn:hover, .alamat:hover{
+    background: goldenrod;
+    color: black;
+}
+.simpan:hover{
+    background: black;
+    color: goldenrod;
+    border-radius: 25px;
+}
