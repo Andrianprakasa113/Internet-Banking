@@ -64,12 +64,10 @@ body {
     transform: translate(50%,-50%);
 }
   .header {
-    display: inline-block;
     background-color: transparent;
     color: #fff;
     text-align: center;
     padding: 5%;
-    width: 100%;
   }
   .logo{
     display: flex;
@@ -219,51 +217,96 @@ font-style: italic;
     height: 125.8vh;
     width: 100%;
 }
+.roadmapheader{
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
 .roadmaph1{
   text-align: center;
   font-size: 40pt;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: 600;
   margin-top: 0%;
   padding: 5% 0 5% 0;
 }
-.tempat{
-  position: relative;
-  top: 20%;
-  right: 50%;
-  transform: translate(50%,-50%);
+.roadmapbody{
+  margin: auto;
+  width: auto;
   text-align: center;
 }
-.pertabel{
-  display: inline-block;
-  /* margin: 0 1% 0 1%; */
-  /* background: white; */
-  width:15%;  
-  margin: 0 0%;
+.tempat{
+display:inline-block;
+margin: auto 3%;
+width: 35%;
 }
 .isitabel{
-  width: 90%;
-  height: 220px;
-  background: #393E46;
-  border-radius: 8px;
+  width: auto;
+  background: rgb(255, 255, 255);
+  border-radius: 25px;
+  border: yellow solid 10px;
   text-align: center;
   color: whitesmoke;
+  margin: auto;
   box-shadow: 5px 5px 6px #000000;
+}
+.quarter{
+  position: relative;
+  color: yellow;
+  margin: auto;
+}
+.quarterborder{
+  margin:auto;
+  text-align: center;
+  border: solid 5px #09a3b8;
+  background-color: #09a3b8;
+  color: white;
+  border-radius: 50px;
+  width: 20%;
+  height: 20px;
+  font-size: 13pt;
+  font-style: italic;
+}
+
+.garis{
+  position: relative;
+  margin: 5% auto;
+  width: 70%;
+  border-radius: 150px;
+  border: #09a3b8 solid 4px;
+}
+.list{
+  position: relative;
+  margin: auto;
+  width: 80%; 
+  text-align: left;
+  font-size: 14pt;
+  color:#000000;
+}
+.list li{
+  margin: 5%;
+list-style-position: outside;
+}
+.list b{
+  color: #09a3b8 ;
 }
 .isih1{
   position: relative;
   top: 15%;
-  transform: translate(0,-50%);
-  color: yellow;
+  color: black;
 }
 .isip{
 position: relative;
   top: 15%;
-  transform: translate(0,-50%);
   font-weight: bold;
 font-style: italic;
 }
-
+@media(max-width: 600px) {
+  /* .about{
+    width: 100%;
+      color: rebeccapurple;
+  } */
+}
 @media(max-width:1300px){
   .about{
     margin: 0 auto;
